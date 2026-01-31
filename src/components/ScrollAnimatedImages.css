@@ -1,0 +1,107 @@
+.scroll-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  font-family: "Conquera", sans-serif;
+}
+
+.scroll-row {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr; /* image slightly larger */
+  align-items: stretch;
+  min-height: 460px;
+  gap: 24px;
+}
+
+.scroll-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical centering */
+  gap: 24px;
+
+  padding: 60px 80px;
+  margin-left: 0;
+
+  background-color: #0e0e0e; /* closer to reference */
+  border-left: 2px solid rgba(255, 255, 255, 0.15);
+
+  text-align: left;
+}
+
+
+.scroll-text h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #ffffff;
+  max-width: 520px;
+}
+
+
+.scroll-text p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 420px;
+}
+
+
+.scroll-image {
+  height: 460px; /* REQUIRED */
+  overflow: hidden;
+  margin-bottom: -120px;
+}
+
+
+.parallax-box {
+  height: 460px;
+}
+
+
+
+@media (max-width: 768px) {
+  .scroll-row {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  /* IMAGE */
+  .scroll-image {
+    height: auto;
+    margin-bottom: 0;
+    overflow: hidden;
+  }
+
+  .parallax-box {
+    position: relative;       /* 🔥 critical */
+    height: 320px;            /* 🔥 give height back */
+    transform: none !important;
+  }
+
+  .parallax-box img {
+    position: relative;       /* 🔥 reset absolute positioning */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* TEXT */
+  .scroll-text {
+    padding: 32px 20px;
+    border-left: none;
+    text-align: left;
+  }
+
+  .scroll-text h2 {
+    font-size: 2rem;
+    max-width: 100%;
+  }
+
+  .scroll-text p {
+    font-size: 14px;
+    max-width: 100%;
+  }
+}
+
