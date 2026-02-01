@@ -9,6 +9,7 @@ import image3 from "../assets/Aiimage3.jpeg";
 import image4 from "../assets/insideashlivin.jpeg";
 import image5 from "../assets/collabarations.jpeg";
 import Rise from "../assets/risewithus.jpeg";
+import beach from "../assets/beach.png"
 
 const textVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -38,7 +39,7 @@ const items = [
     title: "Private Immersions",
     description:
       "Ash Living private immersions are available worldwide, book your private luxury escape where sunrise sets your frequency, sunset restores your system, and deep, cellular level relaxation becomes your new life.",
-    image: image2,
+    image: beach,
     buttonText: "BOOK NOW",
   },
   {

@@ -7,6 +7,8 @@ import aiCreativeVideo from "../assets/Professional_Mode_Astronaut_snowboarding_
 import circle from "../assets/circle.gif";
 import MobileMenu from "../components/MobileMenu";
 import { Instagram } from "lucide-react";
+import dark from "../assets/darkcircle.mp4";
+import bright from "../assets/brightcircle.mp4";
 
 export default function Home({ isDark, toggleTheme }) {
   const emergencyRef = useRef(null);
@@ -56,21 +58,22 @@ export default function Home({ isDark, toggleTheme }) {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="
     relative
-    w-56 h-56            /* 📱 smaller on mobile */
-    sm:w-72 sm:h-72      /* tablets */
-    lg:w-[420px] lg:h-[420px]  /* desktops */
+    w-56 h-56
+    sm:w-72 sm:h-72
+    lg:w-[420px] lg:h-[420px]
     mt-[-4rem]
     mb-16
     rounded-full
     overflow-hidden
-    shadow-2xl
-    border border-black/10 dark:border-white/10
   "
         >
-          <img
-            src={circle}
-            alt="AI Orb"
-            className="w-full h-full object-cover"
+          <video
+            src={isDark ? dark : bright}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover rounded-full"
           />
         </motion.div>
 
@@ -143,7 +146,7 @@ export default function Home({ isDark, toggleTheme }) {
       {/* Emergency Support */}
       <section
         ref={emergencyRef}
-        className=" pt-[110px] min-h-screen flex items-center justify-center px-4 sm:px-6 py-24 sm:py-32 transition-colors bg-white dark:bg-black"
+        className=" pt-[125px] min-h-screen flex items-center justify-center px-4 sm:px-6 py-24 sm:py-32 transition-colors bg-white dark:bg-black"
       >
         {/* Animated Content */}
         <motion.div
@@ -346,7 +349,7 @@ export default function Home({ isDark, toggleTheme }) {
       {/* Regenerative Products */}
       <section
         ref={productsRef}
-        className="py-20 sm:py-28 bg-white dark:bg-black transition-colors"
+        className="py-20 pt-[125px] sm:py-35 bg-white dark:bg-black transition-colors"
       >
         <motion.div
           className="max-w-7xl mx-auto px-6"
