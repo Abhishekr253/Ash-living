@@ -5,14 +5,21 @@ import logoDark from "../assets/al-logo-black.png";
 
 export default function Header({ isDark, toggleTheme, onMenuClick }) {
   return (
-    <header className="sticky top-0 left-0 right-0 z-50 bg-white dark:bg-black backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto px-6 py-8 flex justify-between items-center">
+    <header className="sticky top-0 z-50 bg-white dark:bg-black backdrop-blur-sm">
+      <div className="max-w-7xl mx-auto px-6 py-8 flex justify-between items-center ">
         {/* Logo */}
         <div className="flex items-center">
           <img
             src={isDark ? logo : logoDark}
             alt="ASH Living Logo"
-            className="h-10 sm:h-12 w-auto object-contain"
+            className={`
+      h-auto object-contain
+      ${
+        isDark
+          ? "w-[100px] sm:w-[150px] max-w-[120px]"
+          : "w-[120px] sm:w-[140px] max-w-[80px] "
+      }
+    `}
           />
         </div>
 

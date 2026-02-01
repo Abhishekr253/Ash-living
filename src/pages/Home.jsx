@@ -6,6 +6,7 @@ import Rise from "../assets/risewithus.jpeg";
 import aiCreativeVideo from "../assets/Professional_Mode_Astronaut_snowboarding_directly_.mp4";
 import circle from "../assets/circle.gif";
 import MobileMenu from "../components/MobileMenu";
+import { Instagram } from "lucide-react";
 
 export default function Home({ isDark, toggleTheme }) {
   const emergencyRef = useRef(null);
@@ -27,7 +28,15 @@ export default function Home({ isDark, toggleTheme }) {
 
   const sovereignFontStyle = "font-light tracking-wider";
   return (
-    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors">
+    <div
+      className="
+  min-h-screen
+  bg-white dark:bg-black
+  text-black dark:text-white
+  transition-colors
+  text-[14px] sm:text-[16px]
+"
+    >
       {/* Header */}
       <Header
         isDark={isDark}
@@ -38,7 +47,7 @@ export default function Home({ isDark, toggleTheme }) {
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="flex flex-col items-center justify-center text-center px-6 pt-32 mb-12"
+        className="flex flex-col items-center justify-center text-center px-6 pt-18 mb-12"
       >
         {/* AI Video Circle */}
         <motion.div
@@ -47,9 +56,10 @@ export default function Home({ isDark, toggleTheme }) {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="
     relative
-    w-80 h-80           /* ⬅ increased */
-    sm:w-96 sm:h-96     /* ⬅ larger on bigger screens */
-    lg:w-[420px] lg:h-[420px]
+    w-56 h-56            /* 📱 smaller on mobile */
+    sm:w-72 sm:h-72      /* tablets */
+    lg:w-[420px] lg:h-[420px]  /* desktops */
+    mt-[-4rem]
     mb-16
     rounded-full
     overflow-hidden
@@ -92,7 +102,7 @@ export default function Home({ isDark, toggleTheme }) {
 
         {/* Explore button */}
         <motion.button
-          className={`mt-16 text-sm sm:text-base ${sovereignFontStyle} text-gray-800 tracking-widest uppercase hover:text-black transition-colors hover:cursor-pointer`}
+          className={`mt-16 text-sm sm:text-base ${sovereignFontStyle} tracking-widest uppercase dark:border-white/20 transition-colors hover:cursor-pointer`}
           whileHover={{ y: -2 }}
           whileTap={{ scale: 0.95 }}
           onClick={() =>
@@ -133,7 +143,7 @@ export default function Home({ isDark, toggleTheme }) {
       {/* Emergency Support */}
       <section
         ref={emergencyRef}
-        className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-24 sm:py-32 transition-colors bg-white dark:bg-black"
+        className=" pt-[110px] min-h-screen flex items-center justify-center px-4 sm:px-6 py-24 sm:py-32 transition-colors bg-white dark:bg-black"
       >
         {/* Animated Content */}
         <motion.div
@@ -273,9 +283,9 @@ export default function Home({ isDark, toggleTheme }) {
       </section>
 
       {/* Rise With Us - FLOWED */}
-      <section ref={riseRef} className="py-12 sm:py-20">
+      <section ref={riseRef} className="py-12 mt-[-100px] sm:py-20">
         <motion.div
-          className="max-w-6xl mx-auto w-full px-4 sm:px-6"
+          className="max-w-6xl pt-[110px] mx-auto w-full px-4 sm:px-6"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.25 }}
@@ -297,7 +307,7 @@ export default function Home({ isDark, toggleTheme }) {
             }}
           >
             <h2
-              className={`text-3xl sm:text-4xl md:text-6xl font-serif text-black dark:text-white mb-6 sm:mb-8`}
+              className={`text-3xl sm:text-4xl md:text-6xl  text-black dark:text-white mb-6 sm:mb-8`}
             >
               RISE WITH US
             </h2>
@@ -307,25 +317,6 @@ export default function Home({ isDark, toggleTheme }) {
               us to explore opportunities, share ideas, and grow together in a
               world of intelligent automation and innovation.
             </p>
-          </motion.div>
-
-          {/* Optional Illustration/Image */}
-          <motion.div
-            className="text-center mb-8 sm:mb-12"
-            variants={{
-              hidden: { opacity: 0, scale: 0.96 },
-              visible: {
-                opacity: 1,
-                scale: 1,
-                transition: { duration: 0.8, ease: "easeOut" },
-              },
-            }}
-          >
-            <img
-              src={Rise} // make sure `Rise` is imported at the top
-              alt="Support Illustration"
-              className="mx-auto w-64 sm:w-96 md:w-[700px] lg:w-[900px] max-w-full rounded-lg shadow-xl"
-            />
           </motion.div>
 
           {/* CTA Button */}
@@ -347,9 +338,9 @@ export default function Home({ isDark, toggleTheme }) {
         </motion.div>
       </section>
 
-      <div ref={elevateRef} className="m-2">
+      <div ref={elevateRef} className="m-2 pt-[110px]">
         {/* Scroll Animated Images Component */}
-        <ScrollAnimatedImages />
+        <ScrollAnimatedImages isDark={isDark} />
       </div>
 
       {/* Regenerative Products */}
@@ -384,7 +375,7 @@ export default function Home({ isDark, toggleTheme }) {
             </p>
 
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif text-black dark:text-white mb-6">
-              Elemental Regeneration
+              Regenerate
             </h2>
 
             <p className="max-w-3xl mx-auto text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed">
@@ -397,7 +388,7 @@ export default function Home({ isDark, toggleTheme }) {
 
           {/* Products Grid */}
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
             variants={{
               hidden: {},
               visible: { transition: { staggerChildren: 0.15 } },
@@ -409,25 +400,31 @@ export default function Home({ isDark, toggleTheme }) {
                 desc: "A nutrient-dense superleaf supporting detoxification, immune strength, and metabolic balance.",
               },
               {
-                title: "Magnesium",
+                title: "MAGNESIUM",
                 desc: "Essential for nervous system regulation, deep rest, muscle recovery, and stress resilience.",
               },
               {
-                title: "Gold",
+                title: "GOLD",
                 desc: "Traditionally used to enhance clarity, longevity, and cellular communication.",
               },
               {
-                title: "Silver",
+                title: "SILVER",
                 desc: "Known for antimicrobial balance and immune system support at a foundational level.",
               },
               {
-                title: "Copper",
+                title: "COPPER",
                 desc: "Supports connective tissue health, circulation, and bio-electrical balance.",
               },
             ].map((item, index) => (
               <motion.div
                 key={index}
-                className="p-8 rounded-2xl border border-gray-200 dark:border-white/15 bg-gray-50 dark:bg-white/5 backdrop-blur-sm hover:scale-[1.02] transition"
+                className={`
+    p-8 rounded-2xl border border-gray-200 dark:border-white/15
+    bg-gray-50 dark:bg-white/5 backdrop-blur-sm
+    hover:scale-[1.02] transition
+    ${index === 4 ? "col-span-2 flex justify-center" : ""}
+    lg:col-span-1
+  `}
                 variants={{
                   hidden: { opacity: 0, y: 20 },
                   visible: {
@@ -437,12 +434,16 @@ export default function Home({ isDark, toggleTheme }) {
                   },
                 }}
               >
-                <h3 className="text-xl font-semibold text-black dark:text-white mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-                  {item.desc}
-                </p>
+                <div
+                  className={index === 4 ? "max-w-md w-full text-center" : ""}
+                >
+                  <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-black dark:text-white mb-2 sm:mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+                    {item.desc}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </motion.div>
@@ -462,7 +463,10 @@ export default function Home({ isDark, toggleTheme }) {
         </motion.div>
       </section>
 
-      <section ref={aiRef} className="relative min-h-screen w-full overflow-hidden bg-black">
+      <section
+        ref={aiRef}
+        className=" pt-[110px] relative min-h-screen w-full overflow-hidden bg-black"
+      >
         {/* Video */}
         <video
           className="absolute inset-0 w-full h-full object-cover"
@@ -623,15 +627,36 @@ export default function Home({ isDark, toggleTheme }) {
               visible: { opacity: 1, transition: { duration: 0.6 } },
             }}
           >
-            {["Instagram", "X", "LinkedIn", "YouTube"].map((item) => (
+            {/* Instagram */}
+            <motion.div
+              className="flex justify-center mb-12"
+              variants={{
+                hidden: { opacity: 0, y: 10 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.6 },
+                },
+              }}
+            >
               <a
-                key={item}
-                href="#"
-                className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition"
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="
+      p-3 rounded-full
+      border border-gray-300 dark:border-white/20
+      text-gray-600 dark:text-gray-400
+      hover:text-black dark:hover:text-white
+      hover:border-black dark:hover:border-white
+      hover:scale-105
+      transition
+    "
               >
-                {item}
+                <Instagram size={22} strokeWidth={1.5} />
               </a>
-            ))}
+            </motion.div>
           </motion.div>
 
           {/* Policy Links */}
@@ -666,6 +691,7 @@ export default function Home({ isDark, toggleTheme }) {
 
       <MobileMenu
         isOpen={menuOpen}
+        isDark={isDark}
         onClose={() => setMenuOpen(false)}
         onNavigate={(section) => {
           const map = {

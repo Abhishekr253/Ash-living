@@ -19,47 +19,69 @@
   flex-direction: column;
   justify-content: center; /* vertical centering */
   gap: 24px;
-
   padding: 60px 80px;
-  margin-left: 0;
-
-  background-color: #0e0e0e; /* closer to reference */
-  border-left: 2px solid rgba(255, 255, 255, 0.15);
-
+  margin-left: -12px;
+  border-left: 2px solid;
   text-align: left;
 }
-
 
 .scroll-text h2 {
   font-size: 3rem;
   font-weight: 700;
   line-height: 1.2;
-  color: #ffffff;
   max-width: 520px;
 }
-
 
 .scroll-text p {
   font-size: 15px;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.75);
   max-width: 420px;
 }
 
-
 .scroll-image {
-  height: 460px; /* REQUIRED */
+  height: 460px;
   overflow: hidden;
   margin-bottom: -120px;
 }
-
 
 .parallax-box {
   height: 460px;
 }
 
+.arrow-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.btn-arrow {
+  font-size: 16px;
+  will-change: transform;
+}
+
+/* Light mode text background */
+.light-text-bg {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Dark mode text background */
+.dark-text-bg {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Optional: smooth theme transition */
+.scroll-text {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
 
+/* Mobile responsive */
 @media (max-width: 768px) {
   .scroll-row {
     display: flex;
@@ -67,31 +89,10 @@
     gap: 28px;
   }
 
-  /* IMAGE */
-  .scroll-image {
-    height: auto;
-    margin-bottom: 0;
-    overflow: hidden;
-  }
-
-  .parallax-box {
-    position: relative;       /* 🔥 critical */
-    height: 320px;            /* 🔥 give height back */
-    transform: none !important;
-  }
-
-  .parallax-box img {
-    position: relative;       /* 🔥 reset absolute positioning */
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* TEXT */
   .scroll-text {
+    order: 1;
     padding: 32px 20px;
     border-left: none;
-    text-align: left;
   }
 
   .scroll-text h2 {
@@ -103,5 +104,26 @@
     font-size: 14px;
     max-width: 100%;
   }
-}
 
+  .scroll-image {
+    order: 2;
+    height: auto;
+    margin-bottom: 0;
+  }
+
+  .mobile-image-container {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+  }
+
+  .mobile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .parallax-box {
+    display: none;
+  }
+}

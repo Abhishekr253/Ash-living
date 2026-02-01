@@ -2,4 +2,11 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+* {
+  font-family: "Conquera", sans-serif;
+}
+
+body {
+  font-family: "Conquera", sans-serif;
+}
 

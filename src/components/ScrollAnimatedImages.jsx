@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Parallax } from "react-parallax";
 import "./ScrollAnimatedImages.css";
 import { motion } from "framer-motion";
@@ -8,39 +8,26 @@ import image2 from "../assets/Aiimage2.jpeg";
 import image3 from "../assets/Aiimage3.jpeg";
 import image4 from "../assets/insideashlivin.jpeg";
 import image5 from "../assets/collabarations.jpeg";
-
+import Rise from "../assets/risewithus.jpeg";
 
 const textVariants = {
-  hidden: {
-    opacity: 0,
-    y: 40,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.7,
-      ease: "easeOut",
-    },
-  },
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
 };
-
 
 const items = [
   {
-    title: "Elevate your whole energy’ to The Sovereign Space",
+    title: "The Sovereign Space",
     description:
-      "Advanced computer vision that understands, interprets, and reacts to the world in real time.",
+      "Premium wellness products crafted for optimal living. Experience natural solutions that enhance your daily routine and overall wellbeing",
     image: image1,
-    // buttonText: "Explore",
   },
   {
-    title: "Explore Ash",
+    title: "Ash Living Products",
     description:
       "Advanced computer vision that understands, interprets, and reacts to the world in real time.",
-    image:
-      "https://corneliuscreative.uk/wp-content/uploads/2023/03/ai-generated-image-water-bottle-1.png",
-    buttonText: "Shop Now",
+    image: Rise,
+    buttonText: "SHOP NOW",
   },
   {
     title: "Sovereign Space",
@@ -52,9 +39,9 @@ const items = [
   {
     title: "Private Immersions",
     description:
-      "Ash Living  private immersions are available worldwide, book your private luxury escape where sunrise sets your frequency, sunset restores your system, and deep, cellular level relaxation becomes your new life.",
+      "Ash Living private immersions are available worldwide, book your private luxury escape where sunrise sets your frequency, sunset restores your system, and deep, cellular level relaxation becomes your new life.",
     image: image2,
-    buttonText: "Book NOW",
+    buttonText: "BOOK NOW",
   },
   {
     title: "Explore Inside",
@@ -73,52 +60,87 @@ const items = [
 ];
 
 function ScrollAnimatedImages({ isDark }) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
     <section className="scroll-section">
       {items.map((item, index) => (
         <div className="scroll-row" key={index}>
-          {/* LEFT — TEXT */}
-         <motion.div
-  className={`scroll-text ${isDark ? "dark-text-bg" : "light-text-bg"}`}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true, amount: 0.3 }}
-  transition={{ staggerChildren: 0.15 }}
->
-  <motion.h2 variants={textVariants}>
-    {item.title}
-  </motion.h2>
+          {/* TEXT */}
+          <motion.div
+            className={`scroll-text ${isDark ? "dark-text-bg" : "light-text-bg"}`}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ staggerChildren: 0.15 }}
+          >
+            <motion.h2 className="text" variants={textVariants}>
+              {item.title}
+            </motion.h2>
+            <motion.p className="text" variants={textVariants}>
+              {item.description}
+            </motion.p>
 
-  <motion.p variants={textVariants}>
-    {item.description}
-  </motion.p>
+            {item.buttonText && (
+              <motion.button
+                variants={textVariants}
+                whileHover="hover"
+                whileTap={{ scale: 0.95 }}
+                className="button arrow-btn"
+              >
+                <span className="btn-text">{item.buttonText}</span>
 
-  {item.buttonText && (
-    <motion.button
-      variants={textVariants}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-      className="
-        mt-6 inline-flex items-center
-        w-fit px-4 py-2
-        rounded-full
-        bg-black text-white
-        dark:bg-white dark:text-black
-        text-sm tracking-wider uppercase
-        transition
-      "
-    >
-      {item.buttonText}
-    </motion.button>
-  )}
-</motion.div>
+                <motion.span
+                  className="btn-arrow"
+                  initial="idle"
+                  animate="idle"
+                  variants={{
+                    idle: {
+                      x: [0, 4, 0],
+                      opacity: 1,
+                      transition: {
+                        duration: 1.8,
+                        ease: "easeInOut",
+                        repeat: Infinity,
+                      },
+                    },
+                    hover: {
+                      x: 10,
+                      transition: {
+                        duration: 0.25,
+                        ease: "easeOut",
+                      },
+                    },
+                  }}
+                >
+                  →
+                </motion.span>
+              </motion.button>
+            )}
+          </motion.div>
 
-
-          {/* RIGHT — PARALLAX IMAGE */}
+          {/* IMAGE */}
           <div className="scroll-image">
-            <Parallax strength={250} bgImage={item.image}>
-              <div className="parallax-box" />
-            </Parallax>
+            {isMobile ? (
+              <div className="mobile-image-container">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="mobile-image"
+                />
+              </div>
+            ) : (
+              <Parallax strength={250} bgImage={item.image}>
+                <div className="parallax-box" />
+              </Parallax>
+            )}
           </div>
         </div>
       ))}
