@@ -2,13 +2,11 @@ import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Header from "../components/Header";
 import ScrollAnimatedImages from "../components/ScrollAnimatedImages";
-import Rise from "../assets/risewithus.jpeg";
 import aiCreativeVideo from "../assets/Professional_Mode_Astronaut_snowboarding_directly_.mp4";
-import circle from "../assets/circle.gif";
+import circledark from "../assets/circledark.mp4";
 import MobileMenu from "../components/MobileMenu";
 import { Instagram } from "lucide-react";
-import dark from "../assets/darkcircle.mp4";
-import bright from "../assets/brightcircle.mp4";
+import circlelight from "../assets/circlelight.mp4"
 
 export default function Home({ isDark, toggleTheme }) {
   const emergencyRef = useRef(null);
@@ -68,7 +66,7 @@ export default function Home({ isDark, toggleTheme }) {
   "
         >
           <video
-            src={isDark ? dark : bright}
+            src={isDark ? circledark : circlelight}
             autoPlay
             loop
             muted
