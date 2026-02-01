@@ -4,12 +4,12 @@ import "./ScrollAnimatedImages.css";
 import { motion } from "framer-motion";
 
 import image1 from "../assets/Aiimage1.jpeg";
-import image2 from "../assets/Aiimage2.jpeg";
 import image3 from "../assets/Aiimage3.jpeg";
 import image4 from "../assets/insideashlivin.jpeg";
 import image5 from "../assets/collabarations.jpeg";
-import Rise from "../assets/risewithus.jpeg";
-import beach from "../assets/beach.png"
+import shop from "../assets/shop.jpeg"
+import calm from "../assets/calm.jpeg"
+import inside from "../assets/insideash.jpeg"
 
 const textVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -25,7 +25,7 @@ const items = [
     title: "Ash Living Shop",
     description:
       "Premium wellness products crafted for optimal living. Experience natural solutions that enhance your daily routine and overall wellbeing",
-    image: Rise,
+    image: shop,
     buttonText: "SHOP NOW",
   },
   {
@@ -39,14 +39,14 @@ const items = [
     title: "Private Immersions",
     description:
       "Ash Living private immersions are available worldwide, book your private luxury escape where sunrise sets your frequency, sunset restores your system, and deep, cellular level relaxation becomes your new life.",
-    image: beach,
+    image: calm,
     buttonText: "BOOK NOW",
   },
   {
     title: "Inside Ash Living",
     description:
       "Experience next-generation intelligence designed for human-centric interaction.",
-    image: image4,
+    image: inside,
     buttonText: "ACTIVATE ACCESS",
   },
   {
