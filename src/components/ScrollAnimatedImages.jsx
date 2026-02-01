@@ -18,14 +18,12 @@ const textVariants = {
 const items = [
   {
     title: "The Sovereign Space",
-    description:
-      "Premium wellness products crafted for optimal living. Experience natural solutions that enhance your daily routine and overall wellbeing",
     image: image1,
   },
   {
-    title: "Ash Living Products",
+    title: "Ash Living Shop",
     description:
-      "Advanced computer vision that understands, interprets, and reacts to the world in real time.",
+      "Premium wellness products crafted for optimal living. Experience natural solutions that enhance your daily routine and overall wellbeing",
     image: Rise,
     buttonText: "SHOP NOW",
   },
@@ -44,7 +42,7 @@ const items = [
     buttonText: "BOOK NOW",
   },
   {
-    title: "Explore Inside",
+    title: "Inside Ash Living",
     description:
       "Experience next-generation intelligence designed for human-centric interaction.",
     image: image4,
