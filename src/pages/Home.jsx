@@ -6,7 +6,8 @@ import aiCreativeVideo from "../assets/Professional_Mode_Astronaut_snowboarding_
 import circledark from "../assets/circledark.mp4";
 import MobileMenu from "../components/MobileMenu";
 import { Instagram } from "lucide-react";
-import circlelight from "../assets/circlelight.mp4"
+import circlelight from "../assets/circlelight.mp4";
+import circle from "../assets/circleblue.mp4";
 
 export default function Home({ isDark, toggleTheme }) {
   const emergencyRef = useRef(null);
@@ -56,9 +57,9 @@ export default function Home({ isDark, toggleTheme }) {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="
     relative
-    w-56 h-56
+    w-46 h-50
     sm:w-72 sm:h-72
-    lg:w-[420px] lg:h-[420px]
+    lg:w-[420px] lg:h-[420px]  lg:ms-10
     mt-[-4rem]
     mb-16
     rounded-full
@@ -66,12 +67,12 @@ export default function Home({ isDark, toggleTheme }) {
   "
         >
           <video
-            src={isDark ? circledark : circlelight}
+            src={isDark ? circledark : circle}
             autoPlay
             loop
             muted
             playsInline
-            className="w-full h-full object-cover rounded-full"
+            className="w-[350px] h-full object-cover rounded-full"
           />
         </motion.div>
 
@@ -226,7 +227,7 @@ export default function Home({ isDark, toggleTheme }) {
               }}
             >
               High-privacy support is available 24/7. Please reach out for
-              immediate, confidential assistance.
+              immediate conscious support
             </motion.p>
 
             {/* Emergency Options */}
@@ -239,12 +240,12 @@ export default function Home({ isDark, toggleTheme }) {
             >
               {[
                 {
-                  title: "Call Support",
-                  desc: "Immediate Care Access.Connect directly with a Conscious Support Specialist.",
+                  title: "Immediate Care Access",
+                  desc: "Connect directly with a Conscious Support Specialist.",
                 },
                 {
                   title: "Text Help",
-                  desc: " Message us for more high privacy connection.",
+                  desc: "Message us for a more high privacy connection.",
                 },
               ].map((item, index) => (
                 <div
@@ -313,11 +314,17 @@ export default function Home({ isDark, toggleTheme }) {
               RISE WITH US
             </h2>
 
-            <p className="text-base sm:text-lg md:text-xl font-light text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-6 sm:mb-8">
-              Join our mission to leverage AI for smarter living. Connect with
-              us to explore opportunities, share ideas, and grow together in a
-              world of intelligent automation and innovation.
+            <p className="text-base sm:text-lg md:text-xl font-light text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-6 sm:mb-8 text-justify leading-relaxed">
+              You will be entering a high-level support space designed to
+              deliver strategic clarity and real integration. Sessions are
+              personalised, actionable, and focused on building measurable
+              change across mindset, structured direction, and grounded
+              accountability.
             </p>
+
+            {/* <p className="text-base sm:text-lg md:text-xl font-light text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-6 sm:mb-8">
+              Sessions are personalised, actionable, and focused on building measurable change across mindset, structured direction, and grounded accountability.
+            </p> */}
           </motion.div>
 
           {/* CTA Button */}
@@ -371,12 +378,8 @@ export default function Home({ isDark, toggleTheme }) {
               },
             }}
           >
-            <p className="text-xs tracking-[0.3em] uppercase text-gray-500 dark:text-gray-400 mb-4">
-              Regenerative Essentials
-            </p>
-
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif text-black dark:text-white mb-6">
-              Regenerate
+              Regenerative Essentials
             </h2>
 
             <p className="max-w-3xl mx-auto text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed">
@@ -398,23 +401,23 @@ export default function Home({ isDark, toggleTheme }) {
             {[
               {
                 title: "PLATINUM",
-                desc: "A nutrient-dense superleaf supporting detoxification, immune strength, and metabolic balance.",
+                desc: "A premium, high-frequency formula positioned for refined vitality and elevated performance.",
               },
               {
                 title: "MAGNESIUM",
-                desc: "Essential for nervous system regulation, deep rest, muscle recovery, and stress resilience.",
+                desc: " A foundational mineral that supports relaxation, muscle function, and nervous-system regulation.",
               },
               {
                 title: "GOLD",
-                desc: "Traditionally used to enhance clarity, longevity, and cellular communication.",
+                desc: " A classic tonic positioned for clarity, composure, and inner coherence.",
               },
               {
                 title: "SILVER",
-                desc: "Known for antimicrobial balance and immune system support at a foundational level.",
+                desc: "A precision support positioned for external hygiene and clean, protective protocols.",
               },
               {
                 title: "COPPER",
-                desc: "Supports connective tissue health, circulation, and bio-electrical balance.",
+                desc: "A vitality mineral positioned for strength, resilience, and cellular energy support.",
               },
             ].map((item, index) => (
               <motion.div
@@ -484,7 +487,7 @@ export default function Home({ isDark, toggleTheme }) {
         {/* Content */}
         <div className="relative z-10 min-h-screen flex items-center">
           <motion.div
-            className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-white"
+            className="max-w-6xl mx-auto px-4 sm:px-6  gap-12 items-center text-white"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
@@ -521,7 +524,7 @@ export default function Home({ isDark, toggleTheme }) {
             </div>
 
             {/* Right Highlight Card */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
@@ -540,7 +543,7 @@ export default function Home({ isDark, toggleTheme }) {
               <div className="mt-4 text-xs uppercase tracking-widest text-gray-300">
                 AI Video · Creative Mode
               </div>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </div>
       </section>
@@ -579,8 +582,8 @@ export default function Home({ isDark, toggleTheme }) {
               visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
             }}
           >
-            Receive updates, insights, and early access to regenerative
-            experiences.
+            Receive exclusive transmissions, priority updates, and early access
+            to private experiences.
           </motion.p>
 
           {/* Email Signup */}

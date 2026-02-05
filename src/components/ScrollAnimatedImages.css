@@ -80,6 +80,47 @@
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Button base */
+.button {
+  padding: 14px 28px;
+  border-radius: 9999px;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  width: 200px;
+}
+
+/* Light theme → Dark button */
+.btn-dark {
+  background: #0b0b0b;
+  color: #ffffff;
+}
+
+.btn-dark:hover {
+  background: #1a1a1a;
+}
+
+/* Dark theme → Light button */
+.btn-light {
+  background: #ffffff;
+  color: #0b0b0b;
+}
+
+.btn-light:hover {
+  background: #f1f1f1;
+}
+
+/* Arrow inherits text color */
+.btn-arrow {
+  font-size: 16px;
+}
+
+
 
 /* Mobile responsive */
 @media (max-width: 768px) {

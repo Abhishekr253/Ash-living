@@ -7,9 +7,12 @@ import image1 from "../assets/Aiimage1.jpeg";
 import image3 from "../assets/Aiimage3.jpeg";
 import image4 from "../assets/insideashlivin.jpeg";
 import image5 from "../assets/collabarations.jpeg";
-import shop from "../assets/shop.jpeg"
-import calm from "../assets/calm.jpeg"
-import inside from "../assets/insideash.jpeg"
+import shop from "../assets/shop.jpeg";
+import calm from "../assets/calm.jpeg";
+import inside from "../assets/inside.jpeg";
+import astral from "../assets/astral.jpeg";
+import space from "../assets/space.jpeg";
+import collab from "../assets/collab.jpeg";
 
 const textVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -19,7 +22,7 @@ const textVariants = {
 const items = [
   {
     title: "The Sovereign Space",
-    image: image1,
+    image: space,
   },
   {
     title: "Ash Living Shop",
@@ -29,23 +32,23 @@ const items = [
     buttonText: "SHOP NOW",
   },
   {
-    title: "Sovereign Space",
+    title: "Astral Ascension",
     description:
-      "Automate complex workflows using adaptive AI that learns and improves continuously.",
-    image: image3,
+      "A private sanctuary for transformation that supports stress resilience, clear cognition, and the embodied return to purpose, presence  and personal power.",
+    image: astral,
     buttonText: "START ELEVATION",
   },
   {
     title: "Private Immersions",
     description:
-      "Ash Living private immersions are available worldwide, book your private luxury escape where sunrise sets your frequency, sunset restores your system, and deep, cellular level relaxation becomes your new life.",
+      "Ash Living private immersions are available worldwide, book your private luxury escape where sunrise sets your frequency, sunset restores your system, and deep cellular level relaxation becomes your new life.",
     image: calm,
     buttonText: "BOOK NOW",
   },
   {
     title: "Inside Ash Living",
     description:
-      "Experience next-generation intelligence designed for human-centric interaction.",
+      "Discover the philosophy and people behind our mission. Learn about our commitment to your transformation.",
     image: inside,
     buttonText: "ACTIVATE ACCESS",
   },
@@ -53,7 +56,7 @@ const items = [
     title: "Collaboration",
     description:
       "Join forces with experts and like-minded individuals. Build meaningful connections that accelerate your journey.",
-    image: image5,
+    image: collab,
     buttonText: "EXPLORE COLLABORATION",
   },
 ];
@@ -92,35 +95,11 @@ function ScrollAnimatedImages({ isDark }) {
                 variants={textVariants}
                 whileHover="hover"
                 whileTap={{ scale: 0.95 }}
-                className="button arrow-btn"
+                className={`button arrow-btn ${
+                  isDark ? "btn-light" : "btn-dark"
+                }`}
               >
                 <span className="btn-text">{item.buttonText}</span>
-
-                <motion.span
-                  className="btn-arrow"
-                  initial="idle"
-                  animate="idle"
-                  variants={{
-                    idle: {
-                      x: [0, 4, 0],
-                      opacity: 1,
-                      transition: {
-                        duration: 1.8,
-                        ease: "easeInOut",
-                        repeat: Infinity,
-                      },
-                    },
-                    hover: {
-                      x: 10,
-                      transition: {
-                        duration: 0.25,
-                        ease: "easeOut",
-                      },
-                    },
-                  }}
-                >
-                  →
-                </motion.span>
               </motion.button>
             )}
           </motion.div>
