@@ -473,7 +473,7 @@ export default function Home({ isDark, toggleTheme }) {
       >
         {/* Video */}
         <video
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover scale-[1.25] sm:scale-100 origin-center"
           src={aiCreativeVideo}
           autoPlay
           loop
