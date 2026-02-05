@@ -83,7 +83,7 @@ export default function Home({ isDark, toggleTheme }) {
           transition={{ delay: 0.45 }}
           className="mt-4 max-w-xl text-2xl text-gray-600 dark:text-gray-400"
         >
-          Elevate Your Whole Energy.
+          Elevate Your Whole Energy
         </motion.p>
 
         {/* Buttons */}
