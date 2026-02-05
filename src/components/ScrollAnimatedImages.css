@@ -48,20 +48,6 @@
   height: 460px;
 }
 
-.arrow-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-}
-
-.btn-arrow {
-  font-size: 16px;
-  will-change: transform;
-}
 
 /* Light mode text background */
 .light-text-bg {
@@ -88,6 +74,7 @@
   letter-spacing: 0.08em;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   border: 1px solid transparent;
   transition: all 0.3s ease;
@@ -115,9 +102,8 @@
   background: #f1f1f1;
 }
 
-/* Arrow inherits text color */
-.btn-arrow {
-  font-size: 16px;
+.btn-text {
+  text-align: center;
 }
 
 

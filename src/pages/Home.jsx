@@ -241,7 +241,7 @@ export default function Home({ isDark, toggleTheme }) {
               {[
                 {
                   title: "Immediate Care Access",
-                  desc: "Connect directly with a Conscious Support Specialist.",
+                  desc: "Connect directly with a conscious support specialist.",
                 },
                 {
                   title: "Text Help",
@@ -496,10 +496,8 @@ export default function Home({ isDark, toggleTheme }) {
             {/* Left Content */}
             <div className="space-y-6">
               <h2
-                className={`text-3xl sm:text-4xl md:text-6xl mt-5 ${sovereignFontStyle}`}
+                className={`text-3xl sm:text-4xl md:text-6xl  ${sovereignFontStyle}`}
               >
-                AI-Generated
-                <br />
                 Visual Intelligence
               </h2>
 

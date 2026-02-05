@@ -41,7 +41,7 @@ export default function MobileMenu({ isOpen, onClose, onNavigate, isDark }) {
             { label: "RISE WITH US", key: "rise" },
             { label: "THE SOVEREIGN SPACE", key: "elevate" },
             { label: "REGENERATE", key: "products" },
-            { label: "AI COLLABORATION", key: "ai" },
+            { label: "VISUAL INTELLIGENCE", key: "ai" },
             { label: "STAY CONNECTED", key: "contact" },
           ].map((item) => (
             <button
