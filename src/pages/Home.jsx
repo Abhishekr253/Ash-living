@@ -81,8 +81,20 @@ export default function Home({ isDark, toggleTheme }) {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.45 }}
-          className="mt-4 max-w-xl text-2xl font-medium tracking-[0.3em] uppercase text-gray-600 dark:text-gray-400"
+          className="
+    mt-4
+    max-w-xl
+    whitespace-nowrap
+    text-sm
+    font-light
+    tracking-[0.25em]
+    text-black
+    dark:text-white
 
+    sm:text-2xl
+    sm:font-medium
+    sm:tracking-[0.3em]
+  "
         >
           ELEVATE YOUR WHOLE ENERGY
         </motion.p>
@@ -380,7 +392,7 @@ export default function Home({ isDark, toggleTheme }) {
             }}
           >
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif text-black dark:text-white mb-6">
-              Regenerative Essentials
+              REGENERATIVE ESSENTIALS
             </h2>
 
             <p className="max-w-3xl mx-auto text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed">

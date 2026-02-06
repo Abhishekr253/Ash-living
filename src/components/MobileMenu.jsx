@@ -40,9 +40,10 @@ export default function MobileMenu({ isOpen, onClose, onNavigate, isDark }) {
             { label: "EMERGENCY SUPPORT", key: "emergency" },
             { label: "RISE WITH US", key: "rise" },
             { label: "THE SOVEREIGN SPACE", key: "elevate" },
-            { label: "REGENERATE", key: "products" },
-            { label: "VISUAL INTELLIGENCE", key: "ai" },
+            { label: "ASH LIVING SHOP", key: "products" },
             { label: "STAY CONNECTED", key: "contact" },
+
+            { label: "VISUAL INTELLIGENCE", key: "ai" },
           ].map((item) => (
             <button
               key={item.key}
