@@ -57,7 +57,7 @@ export default function Home({ isDark, toggleTheme }) {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="
     relative
-    w-46 h-50
+    w-86 h-40
     sm:w-72 sm:h-72
     lg:w-[420px] lg:h-[420px]  lg:ms-10
     mt-[-4rem]
@@ -81,9 +81,10 @@ export default function Home({ isDark, toggleTheme }) {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.45 }}
-          className="mt-4 max-w-xl text-2xl text-gray-600 dark:text-gray-400"
+          className="mt-4 max-w-xl text-2xl font-medium tracking-[0.3em] uppercase text-gray-600 dark:text-gray-400"
+
         >
-          Elevate Your Whole Energy
+          ELEVATE YOUR WHOLE ENERGY
         </motion.p>
 
         {/* Buttons */}
@@ -94,11 +95,11 @@ export default function Home({ isDark, toggleTheme }) {
           className="mt-10 flex gap-4 flex-wrap justify-center"
         >
           <button className="px-6 py-3 rounded-full bg-black text-white dark:bg-white dark:text-black font-medium hover:scale-105 transition">
-            Connect
+            CONNECT
           </button>
 
           <button className="px-6 py-3 rounded-full border border-black/20 dark:border-white/20 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition">
-            24/7 Support
+            24/7 SUPPORT
           </button>
         </motion.div>
 
@@ -206,7 +207,7 @@ export default function Home({ isDark, toggleTheme }) {
               className="px-12 sm:px-16 py-4 sm:py-5 text-lg sm:text-xl md:text-2xl rounded-full bg-black text-white dark:bg-white dark:text-black hover:scale-105 transition"
               onClick={() => alert("Connecting to emergency services...")}
             >
-              Connect
+              CONNECT
             </button>
           </motion.div>
 
@@ -340,7 +341,7 @@ export default function Home({ isDark, toggleTheme }) {
             }}
           >
             <button className="px-12 py-4 rounded-full bg-black text-white dark:bg-white dark:text-black font-medium hover:scale-105 transition">
-              Connect
+              CONNECT
             </button>
           </motion.div>
         </motion.div>
@@ -461,7 +462,7 @@ export default function Home({ isDark, toggleTheme }) {
             }}
           >
             <button className="px-14 py-4 rounded-full bg-black text-white dark:bg-white dark:text-black font-medium hover:scale-105 transition">
-              Explore Regeneration
+              REGENERATE
             </button>
           </motion.div>
         </motion.div>
@@ -502,21 +503,22 @@ export default function Home({ isDark, toggleTheme }) {
               </h2>
 
               <p className="text-base sm:text-lg md:text-xl font-light text-gray-200 leading-relaxed max-w-xl">
-                This cinematic sequence is created through advanced AI systems —
-                blending motion, realism, and imagination to communicate ideas
-                beyond traditional design.
+                This cinematic sequence is produced by a leading team in
+                advanced AI — delivering dynamic motion, hyperreal detail, and
+                futuristic world building that sets the standard beyond
+                traditional design.
               </p>
 
               <ul className="space-y-3 text-sm sm:text-base text-gray-300">
-                <li>• Professionally generated AI visuals</li>
-                <li>• Human-guided creative direction</li>
-                <li>• Emotion-driven cinematic storytelling</li>
-                <li>• Designed for immersive digital experiences</li>
+                <li>• Cinematic generated visuals</li>
+                <li>• Human-steered creative direction</li>
+                <li>• Emotion-led cinematic storytelling</li>
+                <li>• Crafted for immersive digital experiences</li>
               </ul>
 
-              <div className="pt-4 ">
-                <button variant="primary" size="lg">
-                  Explore AI Creations
+              <div className="pt-4">
+                <button className="bg-white text-black px-6 py-3 rounded-xl font-medium hover:bg-gray-100 transition">
+                  Explore AI
                 </button>
               </div>
             </div>

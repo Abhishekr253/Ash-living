@@ -50,14 +50,14 @@ const items = [
     description:
       "Discover the philosophy and people behind our mission. Learn about our commitment to your transformation.",
     image: inside,
-    buttonText: "ACTIVATE ACCESS",
+    buttonText: "ACCESS",
   },
   {
     title: "Collaboration",
     description:
       "Join forces with experts and like-minded individuals. Build meaningful connections that accelerate your journey.",
     image: collab,
-    buttonText: "EXPLORE COLLABORATION",
+    buttonText: "EXPLORE",
   },
 ];
 
