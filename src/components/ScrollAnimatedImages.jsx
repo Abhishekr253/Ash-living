@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Parallax } from "react-parallax";
 import "./ScrollAnimatedImages.css";
 import { motion } from "framer-motion";
-
+import { useNavigate } from "react-router-dom";
 import image1 from "../assets/Aiimage1.jpeg";
 import image3 from "../assets/Aiimage3.jpeg";
 import image4 from "../assets/insideashlivin.jpeg";
@@ -37,6 +37,7 @@ const items = [
       "A private sanctuary for transformation that supports stress resilience, clear cognition, and the embodied return to purpose, presence  and personal power.",
     image: astral,
     buttonText: "START ELEVATION",
+    path: "/astral-ascension",
   },
   {
     title: "Private Immersions",
@@ -44,6 +45,7 @@ const items = [
       "Ash Living private immersions are available worldwide, book your private luxury escape where sunrise sets your frequency, sunset restores your system, and deep cellular level relaxation becomes your new life.",
     image: calm,
     buttonText: "BOOK NOW",
+    path: "/private-immersions",
   },
   {
     title: "Inside Ash Living",
@@ -63,6 +65,7 @@ const items = [
 
 function ScrollAnimatedImages({ isDark }) {
   const [isMobile, setIsMobile] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth <= 768);
@@ -95,6 +98,7 @@ function ScrollAnimatedImages({ isDark }) {
                 variants={textVariants}
                 whileHover="hover"
                 whileTap={{ scale: 0.95 }}
+                onClick={() => item.path && navigate(item.path)}
                 className={`button arrow-btn ${
                   isDark ? "btn-light" : "btn-dark"
                 }`}
