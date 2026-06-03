@@ -25,7 +25,7 @@ export default function ImmediateCareAccess() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: false, amount: 0.3 }}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif mb-10 tracking-wide"
+            className="text-2xl sm:text-5xl md:text-7xl lg:text-5xl font-serif mb-10 tracking-wide"
           >
             IMMEDIATE CARE ACCESS
           </motion.h1>
