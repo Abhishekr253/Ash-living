@@ -21,14 +21,24 @@ export default function InsideAshLiving() {
 
       {/* Content */}
       <div className="px-6 py-16 max-w-6xl mx-auto text-center">
-
         {/* Heading */}
         <motion.h1
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: false, amount: 0.3 }}
-          className="text-4xl sm:text-6xl md:text-7xl lg:text-5xl font-serif mb-10 tracking-wide"
+          className="
+    mb-8
+    whitespace-nowrap
+    text-sm
+    font-light
+    tracking-[0.25em]
+    text-black
+
+    sm:text-2xl
+    sm:font-medium
+    sm:tracking-[0.3em]
+  "
         >
           INSIDE ASH LIVING
         </motion.h1>
@@ -42,22 +52,21 @@ export default function InsideAshLiving() {
           className="space-y-6 text-lg md:text-xl font-light leading-relaxed max-w-4xl mx-auto mb-14 text-gray-700"
         >
           <p>
-            Ash Living is an initiation into the infinite architecture of
-            human transformation, where we activate consciousness,
-            emotional intelligence, and energetic refinement.
+            Ash Living is an initiation into the infinite architecture of human
+            transformation, where we activate consciousness, emotional
+            intelligence, and energetic refinement.
           </p>
 
           <p>
-            Ash Living supports individuals through advanced holistic
-            mentoring, metaphysical guidance, and conscious self-mastery,
-            helping them return to a more sovereign, awakened, and powerful
-            state of being.
+            Ash Living supports individuals through advanced holistic mentoring,
+            metaphysical guidance, and conscious self-mastery, helping them
+            return to a more sovereign, awakened, and powerful state of being.
           </p>
 
           <p>
-            To understand the full depth of this work, please book a call
-            to speak with Ash directly, where he can explain the process
-            further and guide you towards alignment.
+            To understand the full depth of this work, please book a call to
+            speak with Ash directly, where he can explain the process further
+            and guide you towards alignment.
           </p>
         </motion.div>
 

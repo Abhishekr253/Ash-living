@@ -21,13 +21,24 @@ export default function AshLivingShop() {
 
       {/* Content */}
       <div className="px-6 py-16 max-w-6xl mx-auto text-center">
-
         {/* Heading */}
         <motion.h1
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl sm:text-6xl md:text-7xl lg:text-5xl font-serif mb-6 tracking-wide"
+          className="
+    mt-4
+    mb-6
+    text-center
+    whitespace-nowrap
+    text-lg
+    font-light
+    tracking-[0.25em]
+
+    sm:text-3xl
+    sm:font-medium
+    sm:tracking-[0.3em]
+  "
         >
           SHOP
         </motion.h1>

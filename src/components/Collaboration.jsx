@@ -21,14 +21,26 @@ export default function Collaboration() {
 
       {/* Content */}
       <div className="px-6 py-16 max-w-6xl mx-auto text-center">
-
         {/* Heading */}
         <motion.h1
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: false, amount: 0.3 }}
-          className="text-4xl sm:text-6xl md:text-7xl lg:text-5xl font-serif mb-10 tracking-wide"
+          className="
+    mt-4
+    mb-10
+    whitespace-nowrap
+    text-lg
+    font-light
+    tracking-[0.5em]
+    text-black
+    text-center
+
+    sm:text-3xl
+    sm:font-medium
+    sm:tracking-[0.2em]
+  "
         >
           COLLABORATION
         </motion.h1>
@@ -43,8 +55,8 @@ export default function Collaboration() {
         >
           <p>
             An invitation for aligned companies, schools, organisations,
-            creatives, leaders, and visionaries who recognise the need for a
-            new standard in wellbeing, consciousness, education, and human
+            creatives, leaders, and visionaries who recognise the need for a new
+            standard in wellbeing, consciousness, education, and human
             development.
           </p>
 
@@ -57,14 +69,14 @@ export default function Collaboration() {
 
           <p>
             Whether through talks, mentoring, retreats, corporate wellness,
-            creative projects, educational programmes, or community
-            initiatives, we welcome collaborations rooted in integrity,
-            purpose, innovation, and real impact.
+            creative projects, educational programmes, or community initiatives,
+            we welcome collaborations rooted in integrity, purpose, innovation,
+            and real impact.
           </p>
 
           <p>
-            If your vision aligns with the Ash Living movement, we invite you
-            to connect with us and explore what can be created together.
+            If your vision aligns with the Ash Living movement, we invite you to
+            connect with us and explore what can be created together.
           </p>
         </motion.div>
 

@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 export default function PrivateImmersions() {
   return (
     <div className="relative min-h-screen w-full bg-white md:bg-transparent text-black md:text-white">
-
       {/* Desktop Background */}
       <div
         className="hidden md:block absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -16,7 +15,6 @@ export default function PrivateImmersions() {
 
       {/* Content Wrapper */}
       <div className="relative z-10">
-
         {/* Logo */}
         <div className="pt-10 flex justify-center">
           <Link to="/">
@@ -30,14 +28,25 @@ export default function PrivateImmersions() {
 
         {/* Main Wrapper */}
         <div className="px-6 py-16 max-w-6xl mx-auto text-center">
-
           {/* Heading */}
           <motion.h1
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: false, amount: 0.3 }}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-5xl font-serif mb-10 tracking-wide"
+            className="
+    mt-4
+    mb-10
+    whitespace-nowrap
+    text-lg
+    font-light
+    tracking-[0.25em]
+    text-center
+
+    sm:text-3xl
+    sm:font-medium
+    sm:tracking-[0.2em]
+  "
           >
             PRIVATE IMMERSIONS
           </motion.h1>
@@ -125,7 +134,6 @@ export default function PrivateImmersions() {
               BEGIN IMMERSION
             </button>
           </motion.form>
-
         </div>
       </div>
     </div>

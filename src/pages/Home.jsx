@@ -109,7 +109,7 @@ export default function Home({ isDark, toggleTheme }) {
           transition={{ delay: 0.6 }}
           className="mt-10 flex gap-4 flex-wrap justify-center"
         >
-          <button className="px-6 py-3 rounded-full bg-black text-white dark:bg-white dark:text-black font-medium hover:scale-105 transition">
+          <button onClick={() => navigate("/inside-ash-living")} className="px-6 py-3 rounded-full bg-black text-white dark:bg-white dark:text-black font-medium hover:scale-105 transition">
             CONNECT
           </button>
 
@@ -179,7 +179,7 @@ export default function Home({ isDark, toggleTheme }) {
         >
           {/* Heading */}
           <motion.h2
-            className="text-3xl sm:text-5xl md:text-7xl lg:text-5xl font-serif mb-8 sm:mb-14"
+            className="text-2xl sm:text-5xl md:text-7xl lg:text-5xl font-serif mb-8 sm:mb-14 whitespace-nowrap"
             variants={{
               hidden: { opacity: 0, y: 40 },
               visible: {
@@ -189,8 +189,7 @@ export default function Home({ isDark, toggleTheme }) {
               },
             }}
           >
-            EMERGENCY
-            SUPPORT
+            EMERGENCY SUPPORT
           </motion.h2>
 
           {/* Paragraph */}
@@ -427,7 +426,7 @@ export default function Home({ isDark, toggleTheme }) {
               },
             }}
           >
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif text-black dark:text-white mb-6">
+            <h2 className="text-4xl sm:text-5xl md:text-5xl font-serif text-black dark:text-white mb-6">
               REGENERATIVE ESSENTIALS
             </h2>
 

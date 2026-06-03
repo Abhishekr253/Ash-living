@@ -28,7 +28,20 @@ export default function RiseWithUs() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: false, amount: 0.3 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-serif mb-10 tracking-wide"
+            className="
+    mt-4
+    mb-10
+    text-center
+    whitespace-nowrap
+    text-lg
+    font-light
+    tracking-[0.2em]
+    text-black 
+
+    sm:text-3xl
+    sm:font-medium
+    sm:tracking-[0.3em]
+  "
           >
             RISE WITH US
           </motion.h1>

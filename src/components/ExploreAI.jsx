@@ -34,7 +34,20 @@ export default function ExploreAI() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: false, amount: 0.3 }}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-5xl font-serif mb-10 tracking-wide"
+            className="
+    mt-4
+    mb-10
+    text-center
+    whitespace-nowrap
+    text-lg
+    font-light
+    tracking-[0.25em]
+    text-black
+
+    sm:text-3xl
+    sm:font-medium
+    sm:tracking-[0.3em]
+  "
           >
             EXPLORE AI
           </motion.h1>
@@ -63,15 +76,30 @@ export default function ExploreAI() {
             viewport={{ once: false, amount: 0.2 }}
             className="max-w-4xl mx-auto mb-20"
           >
-            <h2 className="text-3xl md:text-4xl font-serif mb-6">
-              AI Overview
+            <h2
+              className="
+    mt-4
+    mb-10
+    text-center
+    whitespace-nowrap
+    text-lg
+    font-light
+    tracking-[0.25em]
+    text-black
+
+    sm:text-2xl
+    sm:font-medium
+    sm:tracking-[0.2em]
+  "
+            >
+              AI OVERVIEW
             </h2>
 
             <p className="text-lg font-light leading-relaxed text-gray-600">
               Explore AI combines advanced artificial intelligence with
-              strategic creative thinking to produce premium visual
-              experiences, compelling narratives, innovative content, and
-              future-focused digital solutions.
+              strategic creative thinking to produce premium visual experiences,
+              compelling narratives, innovative content, and future-focused
+              digital solutions.
             </p>
           </motion.div>
 
@@ -98,8 +126,8 @@ export default function ExploreAI() {
 
                 <p className="text-sm text-gray-600 leading-relaxed">
                   Premium AI-powered solutions tailored for modern businesses,
-                  personal brands, creative projects, and transformative
-                  digital experiences.
+                  personal brands, creative projects, and transformative digital
+                  experiences.
                 </p>
               </div>
             ))}

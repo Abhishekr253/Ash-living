@@ -30,11 +30,23 @@ export default function AstralAscension() {
         <div className="px-6 py-16 max-w-6xl mx-auto text-center">
           {/* Heading */}
           <motion.h1
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: false, amount: 0.3 }}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-5xl tracking-[0.08em] leading-[0.95] mb-10 text-justify md:text-center"
+            className="
+    mt-4
+    mb-10
+    whitespace-nowrap
+    text-lg
+    font-light
+    tracking-[0.25em]
+    text-center
+
+    sm:text-3xl
+    sm:font-medium
+    sm:tracking-[0.3em]
+  "
           >
             ASTRAL ASCENSION
           </motion.h1>
@@ -60,7 +72,7 @@ export default function AstralAscension() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: false, amount: 0.2 }}
-            className="space-y-6 text-lg md:text-xl font-light leading-relaxed max-w-3xl mx-auto mb-14 text-justify md:text-center"
+            className="space-y-6 text-lg md:text-xl font-light leading-relaxed max-w-3xl mx-auto mb-14"
           >
             <p>
               Ash Living Astral Ascension is a high level inner cellular
@@ -94,7 +106,7 @@ export default function AstralAscension() {
 
             <input
               type="text"
-              placeholder="Last name"
+              placeholder="Last Name"
               className="px-5 py-3 rounded-full border border-black/30 md:border-white/40 bg-black/5 md:bg-white/10 backdrop-blur-sm focus:outline-none"
             />
 
@@ -108,6 +120,12 @@ export default function AstralAscension() {
               type="tel"
               placeholder="Telephone"
               className="md:col-span-2 px-5 py-3 rounded-full border border-black/30 md:border-white/40 bg-black/5 md:bg-white/10 backdrop-blur-sm focus:outline-none"
+            />
+
+            <textarea
+              rows="5"
+              placeholder="Please share what you're ready to heal, your intentions for ascension, and anything you'd like us to know."
+              className="md:col-span-2 px-5 py-4 rounded-2xl border border-black/30 md:border-white/40 bg-black/5 md:bg-white/10 backdrop-blur-sm focus:outline-none"
             />
 
             <button
