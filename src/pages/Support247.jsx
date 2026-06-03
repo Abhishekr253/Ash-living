@@ -1,79 +1,100 @@
 import { motion } from "framer-motion";
-import { ArrowLeft } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import logoDark from "../assets/al-logo-black.png";
 
 export default function Support247() {
-  const navigate = useNavigate();
-
   return (
-    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white pt-32 pb-20 px-6">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="max-w-3xl mx-auto"
-      >
-        <button
-          onClick={() => navigate(-1)}
-          className="mb-10 flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 dark:border-white/20"
-        >
-          <ArrowLeft size={16} />
-          Back
-        </button>
-
-        <h1 className="text-4xl md:text-6xl font-serif text-center mb-8">
-          24/7 Support
-        </h1>
-
-        <div className="text-center text-gray-600 dark:text-gray-400 space-y-6 mb-14">
-          <p>
-            Conscious support is available whenever you need it.
-          </p>
-
-          <p>
-            If you are experiencing emotional overwhelm, uncertainty,
-            vulnerability, or simply need guidance and support, our team is
-            available to receive your request.
-          </p>
-
-          <p>
-            Please complete the form below and a Conscious Support Specialist
-            will respond as soon as possible.
-          </p>
+    <div className="min-h-screen bg-white text-black">
+      <div className="relative z-10">
+        {/* Logo */}
+        <div className="pt-10 flex justify-center">
+          <Link to="/">
+            <img
+              src={logoDark}
+              alt="Ash Living"
+              className="h-12 md:h-14 hover:opacity-80 transition"
+            />
+          </Link>
         </div>
 
-        <form className="space-y-6">
-          <input
-            type="text"
-            placeholder="Name"
-            className="w-full p-4 rounded-xl border border-gray-300 dark:border-white/20 bg-transparent"
-          />
-
-          <input
-            type="tel"
-            placeholder="Telephone"
-            className="w-full p-4 rounded-xl border border-gray-300 dark:border-white/20 bg-transparent"
-          />
-
-          <input
-            type="email"
-            placeholder="Email"
-            className="w-full p-4 rounded-xl border border-gray-300 dark:border-white/20 bg-transparent"
-          />
-
-          <textarea
-            rows={6}
-            placeholder="How can we support you?"
-            className="w-full p-4 rounded-xl border border-gray-300 dark:border-white/20 bg-transparent resize-none"
-          />
-
-          <button
-            type="submit"
-            className="w-full py-4 rounded-full bg-black text-white dark:bg-white dark:text-black"
+        {/* Content */}
+        <div className="px-6 py-16 max-w-6xl mx-auto text-center">
+          {/* Heading */}
+          <motion.h1
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: false, amount: 0.3 }}
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif mb-10 tracking-wide"
           >
-            Request Support
-          </button>
-        </form>
-      </motion.div>
+            24/7 SUPPORT
+          </motion.h1>
+
+          {/* Content */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: false, amount: 0.2 }}
+            className="space-y-6 text-lg md:text-xl font-light leading-relaxed max-w-4xl mx-auto mb-14 text-gray-600"
+          >
+            <p>
+              Conscious support is available whenever you need it.
+            </p>
+
+            <p>
+              If you are experiencing emotional overwhelm, uncertainty,
+              vulnerability, or simply need guidance and support, our team is
+              available to receive your request.
+            </p>
+
+            <p>
+              Please complete the form below and a Conscious Support Specialist
+              will respond as soon as possible.
+            </p>
+          </motion.div>
+
+          {/* Form */}
+          <motion.form
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: false, amount: 0.2 }}
+            className="w-full max-w-3xl mx-auto grid grid-cols-1 gap-6"
+          >
+            <input
+              type="text"
+              placeholder="Name"
+              className="px-5 py-4 rounded-full border border-black/20 bg-white focus:outline-none"
+            />
+
+            <input
+              type="tel"
+              placeholder="Telephone"
+              className="px-5 py-4 rounded-full border border-black/20 bg-white focus:outline-none"
+            />
+
+            <input
+              type="email"
+              placeholder="Email"
+              className="px-5 py-4 rounded-full border border-black/20 bg-white focus:outline-none"
+            />
+
+            <textarea
+              rows="6"
+              placeholder="How can we support you?"
+              className="px-5 py-4 rounded-3xl border border-black/20 bg-white focus:outline-none resize-none"
+            />
+
+            <button
+              type="submit"
+              className="mt-2 py-4 rounded-full bg-black text-white hover:opacity-90 transition"
+            >
+              REQUEST SUPPORT
+            </button>
+          </motion.form>
+        </div>
+      </div>
     </div>
   );
 }

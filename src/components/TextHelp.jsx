@@ -1,85 +1,96 @@
 import { motion } from "framer-motion";
-import { ArrowLeft } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import logoDark from "../assets/al-logo-black.png";
 
 export default function TextHelp() {
-  const navigate = useNavigate();
   return (
-    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white pt-32 pb-20 px-6">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        className="max-w-3xl mx-auto"
-      >
-        <motion.button
-          whileHover={{ x: -4 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => navigate(-1)}
-          className="
-    flex items-center gap-2
-    mb-10
-    text-sm
-    tracking-widest
-    uppercase
-    text-gray-600
-    dark:text-gray-400
-    hover:text-black
-    dark:hover:text-white
-    transition
-  "
-        >
-          <ArrowLeft size={16} />
-          Back
-        </motion.button>
+    <div className="min-h-screen bg-white text-black">
+      <div className="relative z-10">
+        {/* Logo */}
+        <div className="pt-10 flex justify-center">
+          <Link to="/">
+            <img
+              src={logoDark}
+              alt="Ash Living"
+              className="h-12 md:h-14 hover:opacity-80 transition"
+            />
+          </Link>
+        </div>
 
-        <h1 className="text-4xl md:text-6xl font-serif text-center mb-8">
-          Text Help
-        </h1>
-
-        <p className="text-center text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-14">
-          Text Support is available if you do not feel fully comfortable
-          speaking and would prefer a more private way to reach out.
-        </p>
-
-        <p className="text-center text-gray-600 dark:text-gray-400 leading-relaxed mb-14">
-          Please send us a message below, and a Conscious Support Specialist
-          will respond with care, discretion, and full respect for your privacy.
-        </p>
-
-        <form className="space-y-6">
-          <input
-            type="text"
-            placeholder="Name"
-            className="w-full p-4 rounded-xl border border-gray-300 dark:border-white/20 bg-white dark:bg-white/5"
-          />
-
-          <input
-            type="tel"
-            placeholder="Telephone"
-            className="w-full p-4 rounded-xl border border-gray-300 dark:border-white/20 bg-white dark:bg-white/5"
-          />
-
-          <input
-            type="email"
-            placeholder="Email"
-            className="w-full p-4 rounded-xl border border-gray-300 dark:border-white/20 bg-white dark:bg-white/5"
-          />
-
-          <textarea
-            rows={6}
-            placeholder="Message"
-            className="w-full p-4 rounded-xl border border-gray-300 dark:border-white/20 bg-white dark:bg-white/5 resize-none"
-          />
-
-          <button
-            type="submit"
-            className="w-full py-4 rounded-full bg-black text-white dark:bg-white dark:text-black hover:scale-[1.02] transition"
+        {/* Content */}
+        <div className="px-6 py-16 max-w-6xl mx-auto text-center">
+          {/* Heading */}
+          <motion.h1
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: false, amount: 0.3 }}
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif mb-10 tracking-wide"
           >
-            Send Message
-          </button>
-        </form>
-      </motion.div>
+            TEXT HELP
+          </motion.h1>
+
+          {/* Description */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: false, amount: 0.2 }}
+            className="space-y-6 max-w-4xl mx-auto mb-14"
+          >
+            <p className="text-lg md:text-xl font-light leading-relaxed text-gray-600">
+              Text Support is available if you do not feel fully comfortable
+              speaking and would prefer a more private way to reach out.
+            </p>
+
+            <p className="text-lg md:text-xl font-light leading-relaxed text-gray-600">
+              Please send us a message below, and a Conscious Support Specialist
+              will respond with care, discretion, and full respect for your
+              privacy.
+            </p>
+          </motion.div>
+
+          {/* Form */}
+          <motion.form
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: false, amount: 0.2 }}
+            className="w-full max-w-3xl mx-auto grid grid-cols-1 gap-6"
+          >
+            <input
+              type="text"
+              placeholder="Name"
+              className="px-5 py-4 rounded-full border border-black/20 bg-white focus:outline-none"
+            />
+
+            <input
+              type="tel"
+              placeholder="Telephone"
+              className="px-5 py-4 rounded-full border border-black/20 bg-white focus:outline-none"
+            />
+
+            <input
+              type="email"
+              placeholder="Email"
+              className="px-5 py-4 rounded-full border border-black/20 bg-white focus:outline-none"
+            />
+
+            <textarea
+              rows="6"
+              placeholder="Message"
+              className="px-5 py-4 rounded-3xl border border-black/20 bg-white focus:outline-none resize-none"
+            />
+
+            <button
+              type="submit"
+              className="mt-2 py-4 rounded-full bg-black text-white hover:opacity-90 transition"
+            >
+              SEND MESSAGE
+            </button>
+          </motion.form>
+        </div>
+      </div>
     </div>
   );
 }

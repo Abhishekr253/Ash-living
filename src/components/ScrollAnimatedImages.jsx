@@ -31,6 +31,7 @@ const items = [
       "Premium wellness products crafted for optimal living. Experience natural solutions that enhance your daily routine and overall wellbeing",
     image: shop,
     buttonText: "SHOP NOW",
+    path: "/shop",
   },
   {
     title: "Astral Ascension",

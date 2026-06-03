@@ -1,32 +1,37 @@
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import logoDark from "../assets/al-logo-black.png";
 
 export default function InsideAshLiving() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white pt-32 pb-20 px-6">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        className="max-w-3xl mx-auto"
-      >
+    <div className="min-h-screen w-full bg-white text-black">
+      {/* Logo */}
+      <div className="pt-10 flex justify-center">
+        <Link to="/">
+          <img
+            src={logoDark}
+            alt="Ash Living"
+            className="h-12 md:h-14 hover:opacity-80 transition"
+          />
+        </Link>
+      </div>
+
+      {/* Content */}
+      <div className="px-6 py-16 max-w-6xl mx-auto text-center">
         {/* Back Button */}
         <motion.button
           whileHover={{ x: -4 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => navigate(-1)}
           className="
-            inline-flex items-center gap-2
-            px-4 py-2
-            rounded-full
-            border border-gray-200 dark:border-white/20
-            text-sm tracking-[0.15em] uppercase
-            hover:bg-gray-100 dark:hover:bg-white/10
+            flex items-center gap-2
+            mx-auto mb-10
+            text-sm tracking-widest uppercase
+            text-gray-500 hover:text-black
             transition
-            mb-10
           "
         >
           <ArrowLeft size={16} />
@@ -34,16 +39,28 @@ export default function InsideAshLiving() {
         </motion.button>
 
         {/* Heading */}
-        <h1 className="text-4xl md:text-6xl font-serif text-center mb-8">
-          Inside Ash Living
-        </h1>
+        <motion.h1
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: false, amount: 0.3 }}
+          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif mb-10 tracking-wide"
+        >
+          INSIDE ASH LIVING
+        </motion.h1>
 
         {/* Description */}
-        <div className="space-y-6 text-center text-gray-600 dark:text-gray-400 leading-relaxed mb-14">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: false, amount: 0.2 }}
+          className="space-y-6 text-lg md:text-xl font-light leading-relaxed max-w-4xl mx-auto mb-14 text-gray-700"
+        >
           <p>
-            Ash Living is an initiation into the infinite architecture of human
-            transformation, where we activate consciousness, emotional
-            intelligence, and energetic refinement.
+            Ash Living is an initiation into the infinite architecture of
+            human transformation, where we activate consciousness,
+            emotional intelligence, and energetic refinement.
           </p>
 
           <p>
@@ -54,21 +71,27 @@ export default function InsideAshLiving() {
           </p>
 
           <p>
-            To understand the full depth of this work, please book a call to
-            speak with Ash directly, where he can explain the process further
-            and guide you towards alignment.
+            To understand the full depth of this work, please book a call
+            to speak with Ash directly, where he can explain the process
+            further and guide you towards alignment.
           </p>
-        </div>
+        </motion.div>
 
         {/* Form */}
-        <form className="space-y-6">
+        <motion.form
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: false, amount: 0.2 }}
+          className="w-full max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6"
+        >
           <input
             type="text"
             placeholder="Name"
             className="
-              w-full p-4 rounded-xl
-              border border-gray-300 dark:border-white/20
-              bg-white dark:bg-white/5
+              px-5 py-3 rounded-full
+              border border-black/20
+              bg-black/5
               focus:outline-none
             "
           />
@@ -77,9 +100,9 @@ export default function InsideAshLiving() {
             type="tel"
             placeholder="Telephone"
             className="
-              w-full p-4 rounded-xl
-              border border-gray-300 dark:border-white/20
-              bg-white dark:bg-white/5
+              px-5 py-3 rounded-full
+              border border-black/20
+              bg-black/5
               focus:outline-none
             "
           />
@@ -88,9 +111,10 @@ export default function InsideAshLiving() {
             type="email"
             placeholder="Email"
             className="
-              w-full p-4 rounded-xl
-              border border-gray-300 dark:border-white/20
-              bg-white dark:bg-white/5
+              md:col-span-2
+              px-5 py-3 rounded-full
+              border border-black/20
+              bg-black/5
               focus:outline-none
             "
           />
@@ -98,20 +122,22 @@ export default function InsideAshLiving() {
           <input
             type="datetime-local"
             className="
-              w-full p-4 rounded-xl
-              border border-gray-300 dark:border-white/20
-              bg-white dark:bg-white/5
+              md:col-span-2
+              px-5 py-3 rounded-full
+              border border-black/20
+              bg-black/5
               focus:outline-none
             "
           />
 
           <textarea
-            rows={6}
+            rows="5"
             placeholder="Message"
             className="
-              w-full p-4 rounded-xl
-              border border-gray-300 dark:border-white/20
-              bg-white dark:bg-white/5
+              md:col-span-2
+              px-5 py-4 rounded-2xl
+              border border-black/20
+              bg-black/5
               resize-none
               focus:outline-none
             "
@@ -120,18 +146,17 @@ export default function InsideAshLiving() {
           <button
             type="submit"
             className="
-              w-full py-4
-              rounded-full
-              bg-black text-white
-              dark:bg-white dark:text-black
-              hover:scale-[1.02]
+              md:col-span-2
+              mt-4 py-4 rounded-full
+              border border-black
+              hover:bg-black hover:text-white
               transition
             "
           >
-            Book a Call
+            BOOK A CALL
           </button>
-        </form>
-      </motion.div>
+        </motion.form>
+      </div>
     </div>
   );
 }

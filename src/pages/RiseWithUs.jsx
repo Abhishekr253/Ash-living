@@ -1,80 +1,104 @@
 import { motion } from "framer-motion";
-import { ArrowLeft } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import logoDark from "../assets/al-logo-black.png";
 
 export default function RiseWithUs() {
-  const navigate = useNavigate();
-
   return (
-    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white pt-32 pb-20 px-6">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="max-w-3xl mx-auto"
-      >
-        <button
-          onClick={() => navigate(-1)}
-          className="mb-10 flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 dark:border-white/20"
-        >
-          <ArrowLeft size={16} />
-          Back
-        </button>
+    <div className="relative min-h-screen w-full bg-white md:bg-transparent text-black md:text-white">
+      {/* Desktop Background */}
+      <div className="hidden md:block absolute inset-0 bg-black/60" />
 
-        <h1 className="text-4xl md:text-6xl font-serif text-center mb-8">
-          Rise With Us
-        </h1>
-
-        <div className="text-center text-gray-600 dark:text-gray-400 space-y-6 mb-14">
-          <p>
-            Rise With Us is an invitation into a deeper level of growth,
-            refinement, and personal transformation.
-          </p>
-
-          <p>
-            Through conscious mentoring, strategic guidance, emotional
-            intelligence, and practical integration, we support individuals in
-            creating meaningful and measurable change.
-          </p>
-
-          <p>
-            If you are ready to elevate your mindset, direction, wellbeing,
-            and personal leadership, we invite you to connect with us below.
-          </p>
+      {/* Content */}
+      <div className="relative z-10">
+        {/* Logo */}
+        <div className="pt-10 flex justify-center">
+          <Link to="/">
+            <img
+              src={logoDark}
+              alt="Ash Living"
+              className="h-12 md:h-14 hover:opacity-80 transition md:invert"
+            />
+          </Link>
         </div>
 
-        <form className="space-y-6">
-          <input
-            type="text"
-            placeholder="Name"
-            className="w-full p-4 rounded-xl border border-gray-300 dark:border-white/20 bg-transparent"
-          />
-
-          <input
-            type="tel"
-            placeholder="Telephone"
-            className="w-full p-4 rounded-xl border border-gray-300 dark:border-white/20 bg-transparent"
-          />
-
-          <input
-            type="email"
-            placeholder="Email"
-            className="w-full p-4 rounded-xl border border-gray-300 dark:border-white/20 bg-transparent"
-          />
-
-          <textarea
-            rows={6}
-            placeholder="Tell us about your goals and what you would like support with"
-            className="w-full p-4 rounded-xl border border-gray-300 dark:border-white/20 bg-transparent resize-none"
-          />
-
-          <button
-            type="submit"
-            className="w-full py-4 rounded-full bg-black text-white dark:bg-white dark:text-black"
+        <div className="px-6 py-16 max-w-6xl mx-auto text-center">
+          {/* Heading */}
+          <motion.h1
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: false, amount: 0.3 }}
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif mb-10 tracking-wide"
           >
-            Connect With Us
-          </button>
-        </form>
-      </motion.div>
+            RISE WITH US
+          </motion.h1>
+
+          {/* Content */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: false, amount: 0.2 }}
+            className="space-y-6 text-lg md:text-xl font-light leading-relaxed max-w-4xl mx-auto mb-14"
+          >
+            <p>
+              Rise With Us is an invitation into a deeper level of growth,
+              refinement, and personal transformation.
+            </p>
+
+            <p>
+              Through conscious mentoring, strategic guidance, emotional
+              intelligence, and practical integration, we support individuals in
+              creating meaningful and measurable change.
+            </p>
+
+            <p>
+              If you are ready to elevate your mindset, direction, wellbeing,
+              and personal leadership, we invite you to connect with us below.
+            </p>
+          </motion.div>
+
+          {/* Form */}
+          <motion.form
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: false, amount: 0.2 }}
+            className="w-full max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6"
+          >
+            <input
+              type="text"
+              placeholder="Name"
+              className="px-5 py-3 rounded-full border border-black/30 md:border-white/40 bg-black/5 md:bg-white/10 backdrop-blur-sm focus:outline-none"
+            />
+
+            <input
+              type="tel"
+              placeholder="Telephone"
+              className="px-5 py-3 rounded-full border border-black/30 md:border-white/40 bg-black/5 md:bg-white/10 backdrop-blur-sm focus:outline-none"
+            />
+
+            <input
+              type="email"
+              placeholder="Email"
+              className="md:col-span-2 px-5 py-3 rounded-full border border-black/30 md:border-white/40 bg-black/5 md:bg-white/10 backdrop-blur-sm focus:outline-none"
+            />
+
+            <textarea
+              rows="5"
+              placeholder="Tell us about your goals and what you would like support with."
+              className="md:col-span-2 px-5 py-4 rounded-2xl border border-black/30 md:border-white/40 bg-black/5 md:bg-white/10 backdrop-blur-sm focus:outline-none resize-none"
+            />
+
+            <button
+              type="submit"
+              className="md:col-span-2 mt-4 py-4 rounded-full border border-black md:border-white hover:bg-black hover:text-white md:hover:bg-white md:hover:text-black transition"
+            >
+              CONNECT WITH US
+            </button>
+          </motion.form>
+        </div>
+      </div>
     </div>
   );
 }
