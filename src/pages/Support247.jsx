@@ -25,7 +25,7 @@ export default function Support247() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: false, amount: 0.3 }}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif mb-10 tracking-wide"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif mb-10 tracking-wide"
           >
             24/7 SUPPORT
           </motion.h1>
@@ -36,21 +36,18 @@ export default function Support247() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: false, amount: 0.2 }}
-            className="space-y-6 text-lg md:text-xl font-light leading-relaxed max-w-4xl mx-auto mb-14 text-gray-600"
+            className="space-y-6 text-base md:text-lg font-light leading-relaxed max-w-4xl mx-auto mb-14 text-gray-600"
           >
             <p>
-              Conscious support is available whenever you need it.
+              Conscious support is available for those who require guidance,
+              reassurance, or emotional support during moments of overwhelm,
+              uncertainty, vulnerability, or transition.
             </p>
 
             <p>
-              If you are experiencing emotional overwhelm, uncertainty,
-              vulnerability, or simply need guidance and support, our team is
-              available to receive your request.
-            </p>
-
-            <p>
-              Please complete the form below and a Conscious Support Specialist
-              will respond as soon as possible.
+              If you feel you need support, please complete the form below and
+              our Conscious Support Specialist will review your request and
+              respond as soon as possible.
             </p>
           </motion.div>
 

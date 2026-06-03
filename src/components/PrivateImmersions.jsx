@@ -37,7 +37,7 @@ export default function PrivateImmersions() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: false, amount: 0.3 }}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif mb-10 tracking-wide"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-5xl font-serif mb-10 tracking-wide"
           >
             PRIVATE IMMERSIONS
           </motion.h1>

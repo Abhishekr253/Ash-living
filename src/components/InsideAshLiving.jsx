@@ -21,22 +21,6 @@ export default function InsideAshLiving() {
 
       {/* Content */}
       <div className="px-6 py-16 max-w-6xl mx-auto text-center">
-        {/* Back Button */}
-        <motion.button
-          whileHover={{ x: -4 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={() => navigate(-1)}
-          className="
-            flex items-center gap-2
-            mx-auto mb-10
-            text-sm tracking-widest uppercase
-            text-gray-500 hover:text-black
-            transition
-          "
-        >
-          <ArrowLeft size={16} />
-          Back
-        </motion.button>
 
         {/* Heading */}
         <motion.h1
@@ -44,7 +28,7 @@ export default function InsideAshLiving() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: false, amount: 0.3 }}
-          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif mb-10 tracking-wide"
+          className="text-4xl sm:text-6xl md:text-7xl lg:text-5xl font-serif mb-10 tracking-wide"
         >
           INSIDE ASH LIVING
         </motion.h1>

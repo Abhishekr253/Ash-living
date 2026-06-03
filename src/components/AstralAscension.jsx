@@ -34,7 +34,7 @@ export default function AstralAscension() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: false, amount: 0.3 }}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-[0.08em] leading-[0.95] mb-10 text-justify md:text-center"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-5xl tracking-[0.08em] leading-[0.95] mb-10 text-justify md:text-center"
           >
             ASTRAL ASCENSION
           </motion.h1>

@@ -28,7 +28,7 @@ export default function RiseWithUs() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: false, amount: 0.3 }}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif mb-10 tracking-wide"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-serif mb-10 tracking-wide"
           >
             RISE WITH US
           </motion.h1>
@@ -39,11 +39,11 @@ export default function RiseWithUs() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: false, amount: 0.2 }}
-            className="space-y-6 text-lg md:text-xl font-light leading-relaxed max-w-4xl mx-auto mb-14"
+            className="space-y-6 text-base md:text-lg font-light leading-relaxed max-w-4xl mx-auto mb-14"
           >
             <p>
-              Rise With Us is an invitation into a deeper level of growth,
-              refinement, and personal transformation.
+              You now have access to a deeper level of growth, refinement, and
+              personal transformation.
             </p>
 
             <p>
@@ -54,7 +54,7 @@ export default function RiseWithUs() {
 
             <p>
               If you are ready to elevate your mindset, direction, wellbeing,
-              and personal leadership, we invite you to connect with us below.
+              and personal leadership, we invite you to connect with us.
             </p>
           </motion.div>
 

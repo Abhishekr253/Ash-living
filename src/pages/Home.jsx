@@ -179,7 +179,7 @@ export default function Home({ isDark, toggleTheme }) {
         >
           {/* Heading */}
           <motion.h2
-            className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-serif mb-8 sm:mb-14"
+            className="text-3xl sm:text-5xl md:text-7xl lg:text-5xl font-serif mb-8 sm:mb-14"
             variants={{
               hidden: { opacity: 0, y: 40 },
               visible: {
@@ -190,7 +190,6 @@ export default function Home({ isDark, toggleTheme }) {
             }}
           >
             EMERGENCY
-            <br />
             SUPPORT
           </motion.h2>
 
@@ -510,7 +509,10 @@ export default function Home({ isDark, toggleTheme }) {
               visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
             }}
           >
-            <button onClick={() => navigate("/shop")} className="px-14 py-4 rounded-full bg-black text-white dark:bg-white dark:text-black font-medium hover:scale-105 transition">
+            <button
+              onClick={() => navigate("/shop")}
+              className="px-14 py-4 rounded-full bg-black text-white dark:bg-white dark:text-black font-medium hover:scale-105 transition"
+            >
               REGENERATE
             </button>
           </motion.div>
@@ -566,7 +568,10 @@ export default function Home({ isDark, toggleTheme }) {
               </ul>
 
               <div className="pt-4">
-                <button onClick={() => navigate("/explore-ai")} className="bg-white text-black px-6 py-3 rounded-xl font-medium hover:bg-gray-100 transition">
+                <button
+                  onClick={() => navigate("/explore-ai")}
+                  className="bg-white text-black px-6 py-3 rounded-xl font-medium hover:bg-gray-100 transition"
+                >
                   Explore AI
                 </button>
               </div>
@@ -659,21 +664,6 @@ export default function Home({ isDark, toggleTheme }) {
             />
 
             <input
-              type="tel"
-              placeholder="Telephone"
-              className="
-      w-full
-      px-5 py-4
-      rounded-xl
-      bg-white dark:bg-white/10
-      border border-gray-300 dark:border-white/20
-      text-black dark:text-white
-      placeholder-gray-500 dark:placeholder-gray-400
-      focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white
-    "
-            />
-
-            <input
               type="email"
               placeholder="Email"
               className="
@@ -685,22 +675,6 @@ export default function Home({ isDark, toggleTheme }) {
       text-black dark:text-white
       placeholder-gray-500 dark:placeholder-gray-400
       focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white
-    "
-            />
-
-            <textarea
-              rows={5}
-              placeholder="Message"
-              className="
-      w-full
-      px-5 py-4
-      rounded-xl
-      bg-white dark:bg-white/10
-      border border-gray-300 dark:border-white/20
-      text-black dark:text-white
-      placeholder-gray-500 dark:placeholder-gray-400
-      focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white
-      resize-none
     "
             />
 
