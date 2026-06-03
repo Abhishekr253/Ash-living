@@ -8,6 +8,8 @@ import MobileMenu from "../components/MobileMenu";
 import { Instagram } from "lucide-react";
 import circlelight from "../assets/circlelight.mp4";
 import circle from "../assets/circleblue.mp4";
+import { FaArrowRight } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 export default function Home({ isDark, toggleTheme }) {
   const emergencyRef = useRef(null);
@@ -19,6 +21,7 @@ export default function Home({ isDark, toggleTheme }) {
   const aiRef = useRef(null);
 
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const scrollToSection = (ref) => {
     ref.current?.scrollIntoView({
@@ -110,7 +113,10 @@ export default function Home({ isDark, toggleTheme }) {
             CONNECT
           </button>
 
-          <button className="px-6 py-3 rounded-full border border-black/20 dark:border-white/20 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition">
+          <button
+            onClick={() => navigate("/24-7-support")}
+            className="px-6 py-3 rounded-full border border-black/20 dark:border-white/20 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition"
+          >
             24/7 SUPPORT
           </button>
         </motion.div>
@@ -158,7 +164,7 @@ export default function Home({ isDark, toggleTheme }) {
       {/* Emergency Support */}
       <section
         ref={emergencyRef}
-        className=" pt-[125px] min-h-screen flex items-center justify-center px-4 sm:px-6 py-24 sm:py-32 transition-colors bg-white dark:bg-black"
+        className=" pt-[125px] min-h-screen flex item*s-center justify-center px-4 sm:px-6 py-24 sm:py-32 transition-colors bg-white dark:bg-black"
       >
         {/* Animated Content */}
         <motion.div
@@ -173,7 +179,7 @@ export default function Home({ isDark, toggleTheme }) {
         >
           {/* Heading */}
           <motion.h2
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif mb-10 sm:mb-14"
+            className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-serif mb-8 sm:mb-14"
             variants={{
               hidden: { opacity: 0, y: 40 },
               visible: {
@@ -190,7 +196,7 @@ export default function Home({ isDark, toggleTheme }) {
 
           {/* Paragraph */}
           <motion.p
-            className="text-lg sm:text-xl md:text-2xl font-light mb-14 sm:mb-20 leading-relaxed text-gray-700 dark:text-gray-300"
+            className="text-lg sm:text-xl md:text-2xl font-light mb-14 sm:mb-20 leading-relaxed text-gray-700 dark:text-gray-300 max-w-4xl mx-auto"
             variants={{
               hidden: { opacity: 0, y: 30 },
               visible: {
@@ -200,8 +206,9 @@ export default function Home({ isDark, toggleTheme }) {
               },
             }}
           >
-            If you are currently in need of urgent assistance or feel at
-            immediate risk, please click below to connect with urgent support.
+            Emergency Support connects you directly to a Conscious Support
+            Specialist. Please only continue if this is an emergency situation
+            and you require immediate conscious support.
           </motion.p>
 
           {/* Connect Button */}
@@ -255,21 +262,48 @@ export default function Home({ isDark, toggleTheme }) {
                 {
                   title: "Immediate Care Access",
                   desc: "Connect directly with a conscious support specialist.",
+                  path: "/immediate-care-access",
                 },
                 {
                   title: "Text Help",
                   desc: "Message us for a more high privacy connection.",
+                  path: "/text-help",
                 },
               ].map((item, index) => (
-                <div
+                <motion.div
                   key={index}
-                  className="bg-gray-100 dark:bg-white/10 p-6 rounded-xl text-left border border-gray-200 dark:border-white/20 hover:bg-gray-200 dark:hover:bg-white/20 transition"
+                  onClick={() => navigate(item.path)}
+                  whileHover={{ y: -4 }}
+                  className="
+      bg-gray-100 dark:bg-white/10
+      p-6
+      rounded-xl
+      text-left
+      border border-gray-200 dark:border-white/20
+      hover:bg-gray-200 dark:hover:bg-white/20
+      transition-all
+      duration-300
+      cursor-pointer
+      group
+    "
                 >
-                  <h4 className="text-lg font-semibold mb-2">{item.title}</h4>
+                  <div className="flex items-center justify-between mb-2">
+                    <h4 className="text-lg font-semibold">{item.title}</h4>
+
+                    <FaArrowRight
+                      className="
+          text-gray-500 dark:text-white
+          transition-transform
+          duration-300
+          group-hover:translate-x-2
+        "
+                    />
+                  </div>
+
                   <p className="text-sm text-gray-700 dark:text-gray-300">
                     {item.desc}
                   </p>
-                </div>
+                </motion.div>
               ))}
             </motion.div>
 
@@ -352,7 +386,10 @@ export default function Home({ isDark, toggleTheme }) {
               },
             }}
           >
-            <button className="px-12 py-4 rounded-full bg-black text-white dark:bg-white dark:text-black font-medium hover:scale-105 transition">
+            <button
+              onClick={() => navigate("/rise-with-us")}
+              className="px-12 py-4 rounded-full bg-black text-white dark:bg-white dark:text-black font-medium hover:scale-105 transition"
+            >
               CONNECT
             </button>
           </motion.div>
@@ -473,7 +510,7 @@ export default function Home({ isDark, toggleTheme }) {
               visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
             }}
           >
-            <button className="px-14 py-4 rounded-full bg-black text-white dark:bg-white dark:text-black font-medium hover:scale-105 transition">
+            <button onClick={() => navigate("/shop")} className="px-14 py-4 rounded-full bg-black text-white dark:bg-white dark:text-black font-medium hover:scale-105 transition">
               REGENERATE
             </button>
           </motion.div>
@@ -529,7 +566,7 @@ export default function Home({ isDark, toggleTheme }) {
               </ul>
 
               <div className="pt-4">
-                <button className="bg-white text-black px-6 py-3 rounded-xl font-medium hover:bg-gray-100 transition">
+                <button onClick={() => navigate("/explore-ai")} className="bg-white text-black px-6 py-3 rounded-xl font-medium hover:bg-gray-100 transition">
                   Explore AI
                 </button>
               </div>
@@ -598,9 +635,8 @@ export default function Home({ isDark, toggleTheme }) {
             to private experiences.
           </motion.p>
 
-          {/* Email Signup */}
           <motion.form
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-xl mx-auto mb-14"
+            className="max-w-2xl mx-auto space-y-5 mb-14"
             variants={{
               hidden: { opacity: 0, y: 15 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -608,30 +644,80 @@ export default function Home({ isDark, toggleTheme }) {
             onSubmit={(e) => e.preventDefault()}
           >
             <input
-              type="email"
-              placeholder="Enter your email address"
+              type="text"
+              placeholder="Name"
               className="
-          w-full sm:flex-1
-          px-5 py-3 rounded-full
-          bg-white dark:bg-white/10
-          border border-gray-300 dark:border-white/20
-          text-black dark:text-white
-          placeholder-gray-500 dark:placeholder-gray-400
-          focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white
-        "
+      w-full
+      px-5 py-4
+      rounded-xl
+      bg-white dark:bg-white/10
+      border border-gray-300 dark:border-white/20
+      text-black dark:text-white
+      placeholder-gray-500 dark:placeholder-gray-400
+      focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white
+    "
+            />
+
+            <input
+              type="tel"
+              placeholder="Telephone"
+              className="
+      w-full
+      px-5 py-4
+      rounded-xl
+      bg-white dark:bg-white/10
+      border border-gray-300 dark:border-white/20
+      text-black dark:text-white
+      placeholder-gray-500 dark:placeholder-gray-400
+      focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white
+    "
+            />
+
+            <input
+              type="email"
+              placeholder="Email"
+              className="
+      w-full
+      px-5 py-4
+      rounded-xl
+      bg-white dark:bg-white/10
+      border border-gray-300 dark:border-white/20
+      text-black dark:text-white
+      placeholder-gray-500 dark:placeholder-gray-400
+      focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white
+    "
+            />
+
+            <textarea
+              rows={5}
+              placeholder="Message"
+              className="
+      w-full
+      px-5 py-4
+      rounded-xl
+      bg-white dark:bg-white/10
+      border border-gray-300 dark:border-white/20
+      text-black dark:text-white
+      placeholder-gray-500 dark:placeholder-gray-400
+      focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white
+      resize-none
+    "
             />
 
             <button
               type="submit"
               className="
-          px-8 py-3 rounded-full
-          bg-black text-white
-          dark:bg-white dark:text-black
-          text-sm tracking-widest uppercase
-          hover:scale-105 transition
-        "
+      w-full
+      py-4
+      rounded-full
+      bg-black text-white
+      dark:bg-white dark:text-black
+      text-sm tracking-widest uppercase
+      hover:scale-[1.02]
+      transition
+    "
             >
-              Sign Up
+              Send Message
             </button>
           </motion.form>
 

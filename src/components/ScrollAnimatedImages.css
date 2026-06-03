@@ -122,10 +122,11 @@
     border-left: none;
   }
 
-  .scroll-text h2 {
-    font-size: 2rem;
-    max-width: 100%;
-  }
+ .scroll-text h2 {
+  font-size: 1.5rem;
+  max-width: 100%;
+  line-height: 1.3;
+}
 
   .scroll-text p {
     font-size: 14px;

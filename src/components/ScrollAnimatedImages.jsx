@@ -13,6 +13,7 @@ import inside from "../assets/inside.jpeg";
 import astral from "../assets/astral.jpeg";
 import space from "../assets/space.jpeg";
 import collab from "../assets/collab.jpeg";
+import { path } from "framer-motion/client";
 
 const textVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -53,6 +54,7 @@ const items = [
       "Discover the philosophy and people behind our mission. Learn about our commitment to your transformation.",
     image: inside,
     buttonText: "ACCESS",
+    path: "/inside-ash-living",
   },
   {
     title: "Collaboration",
@@ -60,6 +62,7 @@ const items = [
       "Join forces with experts and like-minded individuals. Build meaningful connections that accelerate your journey.",
     image: collab,
     buttonText: "EXPLORE",
+    path: "/collaborations",
   },
 ];
 

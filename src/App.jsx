@@ -4,6 +4,14 @@ import Home from "./pages/Home";
 import AstralAscension from "./components/AstralAscension";
 import PrivateImmersions from "./components/PrivateImmersions";
 import ScrollToTop from "./components/ScrollToTop";
+import ImmediateCareAccess from "./components/ImmediateCareAccess";
+import TextHelp from "./components/TextHelp";
+import InsideAshLiving from "./components/InsideAshLiving";
+import Collaboration from "./components/Collaboration";
+import Support247 from "./pages/Support247";
+import RiseWithUs from "./pages/RiseWithUs";
+import AshLivingShop from "./pages/AshLivingShop";
+import ExploreAI from "./components/ExploreAI";
 
 export default function App() {
   // Initialize theme from localStorage or default to false (light mode)
@@ -24,14 +32,32 @@ export default function App() {
 
   return (
     <Router>
-      <ScrollToTop /> 
+      <ScrollToTop />
       <Routes>
         <Route
           path="/"
-          element={<Home isDark={isDark} toggleTheme={() => setIsDark(prev => !prev)} />}
+          element={
+            <Home
+              isDark={isDark}
+              toggleTheme={() => setIsDark((prev) => !prev)}
+            />
+          }
         />
         <Route path="/astral-ascension" element={<AstralAscension />} />
         <Route path="/private-immersions" element={<PrivateImmersions />} />
+        654+
+        <Route
+          path="/immediate-care-access"
+          element={<ImmediateCareAccess />}
+        />
+        <Route path="/text-help" element={<TextHelp />} />
+        <Route path="/inside-ash-living" element={<InsideAshLiving />} />
+        <Route path="/collaborations" element={<Collaboration />} />
+        <Route path="/24-7-support" element={<Support247 />} />
+        <Route path="/rise-with-us" element={<RiseWithUs />} />
+
+        <Route path="/shop" element={<AshLivingShop />} />
+<Route path="/explore-ai" element={<ExploreAI />} />
       </Routes>
     </Router>
   );

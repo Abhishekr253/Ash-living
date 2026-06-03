@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 export default function AstralAscension() {
   return (
     <div className="relative min-h-screen w-full bg-white md:bg-transparent text-black md:text-white">
-
       {/* Desktop Background */}
       <div
         className="hidden md:block absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -16,7 +15,6 @@ export default function AstralAscension() {
 
       {/* Content Wrapper */}
       <div className="relative z-10">
-
         {/* Logo */}
         <div className="pt-10 flex justify-center">
           <Link to="/">
@@ -30,14 +28,13 @@ export default function AstralAscension() {
 
         {/* Main Section */}
         <div className="px-6 py-16 max-w-6xl mx-auto text-center">
-
           {/* Heading */}
           <motion.h1
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: false, amount: 0.3 }}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-[0.08em] leading-[0.95] mb-10"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-[0.08em] leading-[0.95] mb-10 text-justify md:text-center"
           >
             ASTRAL ASCENSION
           </motion.h1>
@@ -63,7 +60,7 @@ export default function AstralAscension() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: false, amount: 0.2 }}
-            className="space-y-6 text-lg md:text-xl font-light leading-relaxed max-w-3xl mx-auto mb-14"
+            className="space-y-6 text-lg md:text-xl font-light leading-relaxed max-w-3xl mx-auto mb-14 text-justify md:text-center"
           >
             <p>
               Ash Living Astral Ascension is a high level inner cellular
@@ -120,7 +117,6 @@ export default function AstralAscension() {
               BEGIN ASCENSION
             </button>
           </motion.form>
-
         </div>
       </div>
     </div>
