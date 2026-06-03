@@ -4,9 +4,9 @@ import logoDark from "../assets/al-logo-black.png";
 
 export default function RiseWithUs() {
   return (
-    <div className="relative min-h-screen w-full bg-white md:bg-transparent text-black md:text-white">
+    <div className="relative min-h-screen w-full bg-white  text-black">
       {/* Desktop Background */}
-      <div className="hidden md:block absolute inset-0 bg-black/60" />
+      <div className="hidden md:block absolute inset-0 " />
 
       {/* Content */}
       <div className="relative z-10">
@@ -16,7 +16,7 @@ export default function RiseWithUs() {
             <img
               src={logoDark}
               alt="Ash Living"
-              className="h-12 md:h-14 hover:opacity-80 transition md:invert"
+              className="h-12 md:h-14 hover:opacity-80 transition "
             />
           </Link>
         </div>
@@ -64,35 +64,35 @@ export default function RiseWithUs() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: false, amount: 0.2 }}
-            className="w-full max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6"
+            className="w-full max-w-3xl mx-auto grid grid-cols-1 gap-6"
           >
             <input
               type="text"
               placeholder="Name"
-              className="px-5 py-3 rounded-full border border-black/30 md:border-white/40 bg-black/5 md:bg-white/10 backdrop-blur-sm focus:outline-none"
+              className="px-5 py-4 rounded-full border border-black/20 bg-white focus:outline-none"
             />
 
             <input
               type="tel"
               placeholder="Telephone"
-              className="px-5 py-3 rounded-full border border-black/30 md:border-white/40 bg-black/5 md:bg-white/10 backdrop-blur-sm focus:outline-none"
+              className="px-5 py-4 rounded-full border border-black/20 bg-white focus:outline-none"
             />
 
             <input
               type="email"
               placeholder="Email"
-              className="md:col-span-2 px-5 py-3 rounded-full border border-black/30 md:border-white/40 bg-black/5 md:bg-white/10 backdrop-blur-sm focus:outline-none"
+              className="px-5 py-4 rounded-full border border-black/20 bg-white focus:outline-none"
             />
 
             <textarea
-              rows="5"
+              rows="6"
               placeholder="Tell us about your goals and what you would like support with."
-              className="md:col-span-2 px-5 py-4 rounded-2xl border border-black/30 md:border-white/40 bg-black/5 md:bg-white/10 backdrop-blur-sm focus:outline-none resize-none"
+              className="px-5 py-4 rounded-3xl border border-black/20 bg-white focus:outline-none resize-none"
             />
 
             <button
               type="submit"
-              className="md:col-span-2 mt-4 py-4 rounded-full border border-black md:border-white hover:bg-black hover:text-white md:hover:bg-white md:hover:text-black transition"
+              className="mt-2 py-4 rounded-full bg-black text-white hover:opacity-90 transition"
             >
               CONNECT WITH US
             </button>
