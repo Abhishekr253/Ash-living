@@ -426,9 +426,20 @@ export default function Home({ isDark, toggleTheme }) {
               },
             }}
           >
-            <h2 className="text-4xl sm:text-5xl md:text-5xl font-serif text-black dark:text-white mb-6">
-              REGENERATIVE ESSENTIALS
-            </h2>
+            <h2
+  className="
+    text-lg
+    sm:text-5xl
+    md:text-5xl
+    font-serif
+    text-black
+    dark:text-white
+    mb-6
+    whitespace-nowrap
+  "
+>
+  REGENERATIVE ESSENTIALS
+</h2>
 
             <p className="max-w-3xl mx-auto text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed">
               Regeneration begins at the cellular level. Our advanced
