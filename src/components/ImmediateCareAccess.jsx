@@ -21,17 +21,17 @@ export default function ImmediateCareAccess() {
         <div className="px-6 py-16 max-w-6xl mx-auto text-center">
           {/* Heading */}
           <motion.h1
-  initial={{ opacity: 0, y: 60 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8 }}
-  viewport={{ once: false, amount: 0.3 }}
-  className="
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: false, amount: 0.3 }}
+            className="
     mt-4
     mb-10
     text-center
     whitespace-nowrap
     text-base
-    font-light
+    font-bold
     tracking-[0.2em]
     text-black
 
@@ -39,9 +39,9 @@ export default function ImmediateCareAccess() {
     sm:font-medium
     sm:tracking-[0.2em]
   "
->
-  IMMEDIATE CARE ACCESS
-</motion.h1>
+          >
+            IMMEDIATE CARE ACCESS
+          </motion.h1>
 
           {/* Description */}
           <motion.div
@@ -51,7 +51,7 @@ export default function ImmediateCareAccess() {
             viewport={{ once: false, amount: 0.2 }}
             className="max-w-4xl mx-auto mb-14"
           >
-            <p className="text-lg md:text-xl font-light leading-relaxed text-gray-600">
+            <p className="text-sm md:text-lg font-light leading-relaxed text-gray-600">
               If you are currently feeling vulnerable and in need of conscious
               support, please fill in your details below and a Conscious Support
               Specialist will respond as soon as possible within a reasonable

@@ -32,7 +32,7 @@ export default function Collaboration() {
     mb-10
     whitespace-nowrap
     text-lg
-    font-light
+    font-bold
     tracking-[0.5em]
     text-black
     text-center
@@ -51,7 +51,7 @@ export default function Collaboration() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: false, amount: 0.2 }}
-          className="space-y-6 text-lg md:text-xl font-light leading-relaxed max-w-4xl mx-auto mb-14 text-gray-700"
+          className="space-y-5 text-sm md:text-lg font-light leading-relaxed max-w-4xl mx-auto mb-14 text-gray-700"
         >
           <p>
             An invitation for aligned companies, schools, organisations,

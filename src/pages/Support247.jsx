@@ -21,17 +21,17 @@ export default function Support247() {
         <div className="px-6 py-16 max-w-6xl mx-auto text-center">
           {/* Heading */}
           <motion.h1
-  initial={{ opacity: 0, y: 60 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8 }}
-  viewport={{ once: false, amount: 0.3 }}
-  className="
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: false, amount: 0.3 }}
+            className="
     mt-4
     mb-10
     text-center
     whitespace-nowrap
     text-lg
-    font-light
+    font-bold
     tracking-[0.2em]
     text-black
 
@@ -39,9 +39,9 @@ export default function Support247() {
     sm:font-medium
     sm:tracking-[0.2em]
   "
->
-  24/7 SUPPORT
-</motion.h1>
+          >
+            24/7 SUPPORT
+          </motion.h1>
 
           {/* Content */}
           <motion.div
@@ -49,7 +49,7 @@ export default function Support247() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: false, amount: 0.2 }}
-            className="space-y-6 text-base md:text-lg font-light leading-relaxed max-w-4xl mx-auto mb-14 text-gray-600"
+            className="space-y-6 text-sm md:text-lg font-light leading-relaxed max-w-4xl mx-auto mb-14 text-gray-600"
           >
             <p>
               Conscious support is available for those who require guidance,

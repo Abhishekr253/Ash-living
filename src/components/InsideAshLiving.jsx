@@ -31,7 +31,7 @@ export default function InsideAshLiving() {
     mb-8
     whitespace-nowrap
     text-sm
-    font-light
+    font-bold
     tracking-[0.25em]
     text-black
 
@@ -49,7 +49,17 @@ export default function InsideAshLiving() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: false, amount: 0.2 }}
-          className="space-y-6 text-lg md:text-xl font-light leading-relaxed max-w-4xl mx-auto mb-14 text-gray-700"
+          className="
+    space-y-5
+    text-sm
+    md:text-lg
+    font-light
+    leading-relaxed
+    max-w-4xl
+    mx-auto
+    mb-14
+    text-gray-700
+  "
         >
           <p>
             Ash Living is an initiation into the infinite architecture of human
@@ -112,16 +122,21 @@ export default function InsideAshLiving() {
             "
           />
 
-          <input
-            type="datetime-local"
-            className="
-              md:col-span-2
-              px-5 py-3 rounded-full
-              border border-black/20
-              bg-black/5
-              focus:outline-none
-            "
-          />
+          <div className="md:col-span-2">
+            <label className="block text-sm text-gray-600 mb-2 text-left">
+              Date and Time
+            </label>
+            <input
+              type="datetime-local"
+              className="
+      w-full
+      px-5 py-3 rounded-full
+      border border-black/20
+      bg-black/5
+      focus:outline-none
+    "
+            />
+          </div>
 
           <textarea
             rows="5"

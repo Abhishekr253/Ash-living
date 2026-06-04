@@ -89,13 +89,13 @@ export default function Home({ isDark, toggleTheme }) {
     max-w-xl
     whitespace-nowrap
     text-sm
-    font-light
+    font-bold
     tracking-[0.25em]
     text-black
     dark:text-white
 
     sm:text-2xl
-    sm:font-medium
+    sm:font-light
     sm:tracking-[0.3em]
   "
         >
@@ -109,7 +109,10 @@ export default function Home({ isDark, toggleTheme }) {
           transition={{ delay: 0.6 }}
           className="mt-10 flex gap-4 flex-wrap justify-center"
         >
-          <button onClick={() => navigate("/inside-ash-living")} className="px-6 py-3 rounded-full bg-black text-white dark:bg-white dark:text-black font-medium hover:scale-105 transition">
+          <button
+            onClick={() => navigate("/inside-ash-living")}
+            className="px-6 py-3 rounded-full bg-black text-white dark:bg-white dark:text-black font-medium hover:scale-105 transition"
+          >
             CONNECT
           </button>
 
@@ -194,7 +197,7 @@ export default function Home({ isDark, toggleTheme }) {
 
           {/* Paragraph */}
           <motion.p
-            className="text-lg sm:text-xl md:text-2xl font-light mb-14 sm:mb-20 leading-relaxed text-gray-700 dark:text-gray-300 max-w-4xl mx-auto"
+            className="text-sm sm:text-base md:text-lg font-light mb-14 sm:mb-20 leading-relaxed text-gray-700 dark:text-gray-300 max-w-4xl mx-auto"
             variants={{
               hidden: { opacity: 0, y: 30 },
               visible: {
@@ -221,7 +224,7 @@ export default function Home({ isDark, toggleTheme }) {
             }}
           >
             <button
-              className="px-12 sm:px-16 py-4 sm:py-5 text-lg sm:text-xl md:text-2xl rounded-full bg-black text-white dark:bg-white dark:text-black hover:scale-105 transition"
+              className="px-12 py-4 rounded-full bg-black text-white dark:bg-white dark:text-black font-medium hover:scale-105 transition"
               onClick={() => alert("Connecting to emergency services...")}
             >
               CONNECT
@@ -287,15 +290,6 @@ export default function Home({ isDark, toggleTheme }) {
                 >
                   <div className="flex items-center justify-between mb-2">
                     <h4 className="text-lg font-semibold">{item.title}</h4>
-
-                    <FaArrowRight
-                      className="
-          text-gray-500 dark:text-white
-          transition-transform
-          duration-300
-          group-hover:translate-x-2
-        "
-                    />
                   </div>
 
                   <p className="text-sm text-gray-700 dark:text-gray-300">
@@ -427,7 +421,7 @@ export default function Home({ isDark, toggleTheme }) {
             }}
           >
             <h2
-  className="
+              className="
     text-lg
     sm:text-5xl
     md:text-5xl
@@ -437,9 +431,9 @@ export default function Home({ isDark, toggleTheme }) {
     mb-6
     whitespace-nowrap
   "
->
-  REGENERATIVE ESSENTIALS
-</h2>
+            >
+              REGENERATIVE ESSENTIALS
+            </h2>
 
             <p className="max-w-3xl mx-auto text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed">
               Regeneration begins at the cellular level. Our advanced
@@ -629,13 +623,24 @@ export default function Home({ isDark, toggleTheme }) {
         >
           {/* Heading */}
           <motion.h2
-            className="text-3xl sm:text-4xl md:text-5xl font-serif mb-6 text-black dark:text-white"
+            className="
+    text-lg
+    sm:text-xl
+    md:text-4xl
+    font-bold
+    sm:font-medium
+    tracking-[0.25em]
+    uppercase
+    mb-6
+    text-black
+    dark:text-white
+  "
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
             }}
           >
-            Stay Connected
+            STAY CONNECTED
           </motion.h2>
 
           {/* Subtitle */}

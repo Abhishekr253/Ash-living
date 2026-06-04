@@ -21,17 +21,17 @@ export default function TextHelp() {
         <div className="px-6 py-16 max-w-6xl mx-auto text-center">
           {/* Heading */}
           <motion.h1
-  initial={{ opacity: 0, y: 60 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8 }}
-  viewport={{ once: false, amount: 0.3 }}
-  className="
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: false, amount: 0.3 }}
+            className="
     mt-4
     mb-10
     text-center
     whitespace-nowrap
     text-lg
-    font-light
+    font-bold
     tracking-[0.2em]
     text-black
 
@@ -39,9 +39,9 @@ export default function TextHelp() {
     sm:font-medium
     sm:tracking-[0.2em]
   "
->
-  TEXT HELP
-</motion.h1>
+          >
+            TEXT HELP
+          </motion.h1>
 
           {/* Description */}
           <motion.div
@@ -51,12 +51,12 @@ export default function TextHelp() {
             viewport={{ once: false, amount: 0.2 }}
             className="space-y-6 max-w-4xl mx-auto mb-14"
           >
-            <p className="text-lg md:text-xl font-light leading-relaxed text-gray-600">
+            <p className="text-sm md:text-lg font-light leading-relaxed text-gray-600">
               Text Support is available if you do not feel fully comfortable
               speaking and would prefer a more private way to reach out.
             </p>
 
-            <p className="text-lg md:text-xl font-light leading-relaxed text-gray-600">
+            <p className="text-sm md:text-lg font-light leading-relaxed text-gray-600">
               Please send us a message below, and a Conscious Support Specialist
               will respond with care, discretion, and full respect for your
               privacy.
@@ -80,12 +80,6 @@ export default function TextHelp() {
             <input
               type="tel"
               placeholder="Telephone"
-              className="px-5 py-4 rounded-full border border-black/20 bg-white focus:outline-none"
-            />
-
-            <input
-              type="email"
-              placeholder="Email"
               className="px-5 py-4 rounded-full border border-black/20 bg-white focus:outline-none"
             />
 

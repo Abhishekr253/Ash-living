@@ -30,15 +30,15 @@ export default function RiseWithUs() {
             viewport={{ once: false, amount: 0.3 }}
             className="
     mt-4
-    mb-10
+    mb-12
     text-center
     whitespace-nowrap
     text-lg
-    font-light
-    tracking-[0.2em]
-    text-black 
+    font-bold
+    tracking-[0.25em]
+    text-black
 
-    sm:text-3xl
+    sm:text-2xl
     sm:font-medium
     sm:tracking-[0.3em]
   "
@@ -52,7 +52,18 @@ export default function RiseWithUs() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: false, amount: 0.2 }}
-            className="space-y-6 text-base md:text-lg font-light leading-relaxed max-w-4xl mx-auto mb-14"
+            className="
+  space-y-5
+  text-sm
+  md:text-lg
+  lg:text-xl
+  font-light
+  leading-relaxed
+  text-gray-600
+  max-w-3xl
+  mx-auto
+  mb-16
+"
           >
             <p>
               You now have access to a deeper level of growth, refinement, and
@@ -72,44 +83,60 @@ export default function RiseWithUs() {
           </motion.div>
 
           {/* Form */}
-          <motion.form
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: false, amount: 0.2 }}
-            className="w-full max-w-3xl mx-auto grid grid-cols-1 gap-6"
-          >
-            <input
-              type="text"
-              placeholder="Name"
-              className="px-5 py-4 rounded-full border border-black/20 bg-white focus:outline-none"
-            />
-
-            <input
-              type="tel"
-              placeholder="Telephone"
-              className="px-5 py-4 rounded-full border border-black/20 bg-white focus:outline-none"
-            />
-
-            <input
-              type="email"
-              placeholder="Email"
-              className="px-5 py-4 rounded-full border border-black/20 bg-white focus:outline-none"
-            />
-
-            <textarea
-              rows="6"
-              placeholder="Tell us about your goals and what you would like support with."
-              className="px-5 py-4 rounded-3xl border border-black/20 bg-white focus:outline-none resize-none"
-            />
-
-            <button
-              type="submit"
-              className="mt-2 py-4 rounded-full bg-black text-white hover:opacity-90 transition"
+          <div className="max-w-3xl mx-auto rounded-3xl border border-black/10 p-6 sm:p-10">
+            <motion.form
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: false, amount: 0.2 }}
+              className="grid grid-cols-1 gap-5"
             >
-              CONNECT WITH US
-            </button>
-          </motion.form>
+              <input
+                type="text"
+                placeholder="Name"
+                className="px-5 py-4 rounded-full border border-black/20 bg-white focus:outline-none"
+              />
+
+              <input
+                type="tel"
+                placeholder="Telephone"
+                className="px-5 py-4 rounded-full border border-black/20 bg-white focus:outline-none"
+              />
+
+              <input
+                type="email"
+                placeholder="Email"
+                className="px-5 py-4 rounded-full border border-black/20 bg-white focus:outline-none"
+              />
+
+              <textarea
+                rows="6"
+                placeholder="Tell us about your goals and what you would like support with."
+                className="px-5 py-4 rounded-3xl border border-black/20 bg-white focus:outline-none resize-none"
+              />
+
+              <button
+                type="submit"
+                className="
+    mt-2
+    px-6 md:px-8
+    py-2.5 md:py-3
+    w-fit
+    mx-auto
+    rounded-full
+    bg-black
+    text-white
+    text-xs md:text-sm
+    tracking-[0.12em]
+    uppercase
+    hover:opacity-90
+    transition
+  "
+              >
+                CONNECT WITH US
+              </button>
+            </motion.form>
+          </div>
         </div>
       </div>
     </div>

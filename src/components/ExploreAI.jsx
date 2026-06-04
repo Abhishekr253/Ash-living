@@ -36,16 +36,16 @@ export default function ExploreAI() {
             viewport={{ once: false, amount: 0.3 }}
             className="
     mt-4
-    mb-10
+    mb-8 md:mb-10
     text-center
     whitespace-nowrap
-    text-lg
-    font-light
-    tracking-[0.25em]
+    text-base
+    font-bold
+    tracking-[0.2em]
     text-black
 
-    sm:text-3xl
-    sm:font-medium
+    sm:text-xl
+    md:text-3xl
     sm:tracking-[0.3em]
   "
           >
@@ -60,7 +60,7 @@ export default function ExploreAI() {
             viewport={{ once: false, amount: 0.2 }}
             className="max-w-4xl mx-auto mb-16"
           >
-            <p className="text-lg md:text-xl font-light leading-relaxed text-gray-600">
+            <p className="text-sm md:text-base lg:text-xl font-light leading-relaxed text-gray-600">
               Advanced artificial intelligence, cinematic storytelling, and
               human-guided creative direction designed to elevate brands,
               businesses, creators, and visionary projects through premium
@@ -74,28 +74,28 @@ export default function ExploreAI() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: false, amount: 0.2 }}
-            className="max-w-4xl mx-auto mb-20"
+            className="max-w-4xl mx-auto mb-16 md:mb-20"
           >
             <h2
               className="
-    mt-4
-    mb-10
-    text-center
-    whitespace-nowrap
-    text-lg
-    font-light
-    tracking-[0.25em]
-    text-black
+      mt-4
+      mb-6 md:mb-10
+      text-center
+      whitespace-nowrap
+      text-base
+      font-bold
+      tracking-[0.2em]
+      text-black
 
-    sm:text-2xl
-    sm:font-medium
-    sm:tracking-[0.2em]
-  "
+      sm:text-xl
+      md:text-2xl
+      sm:tracking-[0.2em]
+    "
             >
               AI OVERVIEW
             </h2>
 
-            <p className="text-lg font-light leading-relaxed text-gray-600">
+            <p className="text-sm md:text-lg font-light leading-relaxed text-gray-600">
               Explore AI combines advanced artificial intelligence with
               strategic creative thinking to produce premium visual experiences,
               compelling narratives, innovative content, and future-focused
@@ -109,22 +109,24 @@ export default function ExploreAI() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: false, amount: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-20"
+            className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto mb-20"
           >
             {services.map((service, index) => (
               <div
                 key={index}
                 className="
-                  p-8
-                  rounded-2xl
-                  border border-black/10
-                  hover:border-black/30
-                  transition
-                "
+        p-5 md:p-8
+        rounded-xl md:rounded-2xl
+        border border-black/10
+        hover:border-black/30
+        transition
+      "
               >
-                <h3 className="text-xl font-medium mb-3">{service}</h3>
+                <h3 className="text-base md:text-xl font-medium mb-2 md:mb-3">
+                  {service}
+                </h3>
 
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
                   Premium AI-powered solutions tailored for modern businesses,
                   personal brands, creative projects, and transformative digital
                   experiences.
@@ -141,24 +143,29 @@ export default function ExploreAI() {
             viewport={{ once: false, amount: 0.2 }}
             className="mb-20"
           >
-            <h2 className="text-3xl md:text-5xl font-serif mb-6">
+            <h2 className="text-xl sm:text-2xl md:text-5xl font-serif mb-4 md:mb-6">
               Ready To Explore What's Possible?
             </h2>
 
-            <p className="max-w-3xl mx-auto text-lg font-light text-gray-600 mb-10">
+            <p className="max-w-3xl mx-auto text-sm sm:text-base md:text-lg font-light text-gray-600 mb-8 md:mb-10">
               Discover how advanced AI can transform content creation,
               storytelling, branding, and digital experiences.
             </p>
 
             <button
               className="
-                px-10 py-4
-                rounded-full
-                bg-black
-                text-white
-                hover:opacity-90
-                transition
-              "
+      px-6 py-2.5
+      sm:px-8 sm:py-3
+      md:px-10 md:py-4
+      rounded-full
+      bg-black
+      text-white
+      text-xs sm:text-sm md:text-base
+      tracking-[0.12em]
+      uppercase
+      hover:opacity-90
+      transition
+    "
             >
               BOOK A DISCOVERY CALL
             </button>
@@ -170,43 +177,56 @@ export default function ExploreAI() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: false, amount: 0.2 }}
-            className="w-full max-w-3xl mx-auto grid grid-cols-1 gap-6"
+            className="w-full max-w-3xl mx-auto grid grid-cols-1 gap-5"
           >
-            <h2 className="text-3xl md:text-4xl font-serif mb-4">
+            <h2 className="text-lg sm:text-xl md:text-4xl font-bold mb-3 md:mb-4 tracking-[0.15em] uppercase">
               Make An Enquiry
             </h2>
 
-            <p className="text-gray-600 mb-4">
+            <p className="text-sm md:text-base text-gray-600 mb-3 md:mb-4">
               Tell us about your project and how we can help.
             </p>
 
             <input
               type="text"
               placeholder="Name"
-              className="px-5 py-4 rounded-full border border-black/20 bg-white focus:outline-none"
+              className="px-4 md:px-5 py-3 md:py-4 rounded-full border border-black/20 bg-white focus:outline-none text-sm md:text-base"
             />
 
             <input
               type="email"
               placeholder="Email"
-              className="px-5 py-4 rounded-full border border-black/20 bg-white focus:outline-none"
+              className="px-4 md:px-5 py-3 md:py-4 rounded-full border border-black/20 bg-white focus:outline-none text-sm md:text-base"
             />
 
             <input
               type="text"
               placeholder="Company / Organisation"
-              className="px-5 py-4 rounded-full border border-black/20 bg-white focus:outline-none"
+              className="px-4 md:px-5 py-3 md:py-4 rounded-full border border-black/20 bg-white focus:outline-none text-sm md:text-base"
             />
 
             <textarea
               rows={6}
               placeholder="Tell us about your project..."
-              className="px-5 py-4 rounded-3xl border border-black/20 bg-white resize-none focus:outline-none"
+              className="px-4 md:px-5 py-3 md:py-4 rounded-3xl border border-black/20 bg-white resize-none focus:outline-none text-sm md:text-base"
             />
 
             <button
               type="submit"
-              className="mt-2 py-4 rounded-full bg-black text-white hover:opacity-90 transition"
+              className="
+      mt-2
+      mx-auto
+      px-8 md:px-12
+      py-2.5 md:py-3.5
+      rounded-full
+      bg-black
+      text-white
+      text-xs md:text-sm
+      tracking-[0.15em]
+      uppercase
+      hover:opacity-90
+      transition
+    "
             >
               SUBMIT ENQUIRY
             </button>

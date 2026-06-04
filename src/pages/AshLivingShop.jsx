@@ -32,7 +32,7 @@ export default function AshLivingShop() {
     text-center
     whitespace-nowrap
     text-lg
-    font-light
+    font-bold
     tracking-[0.25em]
 
     sm:text-3xl
@@ -44,12 +44,12 @@ export default function AshLivingShop() {
         </motion.h1>
 
         {/* Launching Soon */}
-        <p className="text-xl md:text-2xl font-light mb-8 text-gray-700">
+        <p className="text-xl md:text-2xl font-light  mb-8 text-gray-700">
           Launching Soon
         </p>
 
         {/* Intro */}
-        <div className="max-w-3xl mx-auto text-lg md:text-xl font-light leading-relaxed text-gray-700 mb-14 space-y-6">
+        <div className="max-w-3xl mx-auto text-sm md:text-xl font-light leading-relaxed text-gray-700 mb-14 space-y-6">
           <p>The Ash Living Shop is currently being prepared.</p>
 
           <p>

@@ -39,7 +39,7 @@ export default function PrivateImmersions() {
     mb-10
     whitespace-nowrap
     text-lg
-    font-light
+    font-bold
     tracking-[0.25em]
     text-center
 
@@ -72,7 +72,7 @@ export default function PrivateImmersions() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: false, amount: 0.2 }}
-            className="space-y-6 text-lg md:text-xl font-light leading-relaxed max-w-3xl mx-auto mb-14"
+            className="space-y-5 text-sm md:text-lg font-light leading-relaxed max-w-3xl mx-auto mb-14"
           >
             <p>
               Hosted in the world’s most beautiful sanctuaries — designed for
@@ -99,14 +99,8 @@ export default function PrivateImmersions() {
           >
             <input
               type="text"
-              placeholder="First name"
-              className="px-5 py-3 rounded-full border border-black/30 md:border-white/40 bg-black/5 md:bg-white/10 backdrop-blur-sm focus:outline-none"
-            />
-
-            <input
-              type="text"
-              placeholder="Last Name"
-              className="px-5 py-3 rounded-full border border-black/30 md:border-white/40 bg-black/5 md:bg-white/10 backdrop-blur-sm focus:outline-none"
+              placeholder="Name"
+              className="md:col-span-2 px-5 py-3 rounded-full border border-black/30 md:border-white/40 bg-black/5 md:bg-white/10 backdrop-blur-sm focus:outline-none"
             />
 
             <input
