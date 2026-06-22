@@ -2,9 +2,76 @@ import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate, Link } from "react-router-dom";
 import logoDark from "../assets/al-logo-black.png";
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function Collaboration() {
   const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    name: "",
+    companyOrganization: "",
+    email: "",
+    telephone: "",
+    collaborationType: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+
+    try {
+      await emailjs.send(
+        "service_rpuefrw",
+        "template_dmpxu4o",
+        {
+          name: formData.name,
+          email: formData.email,
+          telephone: formData.telephone,
+          message: formData.message,
+
+          company_organization: formData.companyOrganization,
+          collaboration_type: formData.collaborationType,
+
+          section_name: "Collaboration",
+
+          date: new Date().toLocaleDateString(),
+          time: new Date().toLocaleTimeString(),
+
+          page_url: window.location.href,
+          submission_id: `ASH-${Date.now()}`,
+        },
+        "LxQMBJc2D2fjN75Jp",
+      );
+
+      alert("Collaboration request submitted successfully.");
+
+      setFormData({
+        name: "",
+        companyOrganization: "",
+        email: "",
+        telephone: "",
+        collaborationType: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error(error);
+      alert("Failed to submit request.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="min-h-screen w-full bg-white text-black">
@@ -82,6 +149,7 @@ export default function Collaboration() {
 
         {/* Form */}
         <motion.form
+          onSubmit={handleSubmit}
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -90,6 +158,9 @@ export default function Collaboration() {
         >
           <input
             type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
             placeholder="Full Name"
             className="
               px-5 py-3 rounded-full
@@ -101,6 +172,9 @@ export default function Collaboration() {
 
           <input
             type="text"
+            name="companyOrganization"
+            value={formData.companyOrganization}
+            onChange={handleChange}
             placeholder="Company / Organisation"
             className="
               px-5 py-3 rounded-full
@@ -112,6 +186,9 @@ export default function Collaboration() {
 
           <input
             type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
             placeholder="Email"
             className="
               md:col-span-2
@@ -124,6 +201,9 @@ export default function Collaboration() {
 
           <input
             type="tel"
+            name="telephone"
+            value={formData.telephone}
+            onChange={handleChange}
             placeholder="Telephone"
             className="
               md:col-span-2
@@ -135,27 +215,33 @@ export default function Collaboration() {
           />
 
           <select
+            name="collaborationType"
+            value={formData.collaborationType}
+            onChange={handleChange}
             className="
-              md:col-span-2
-              px-5 py-3 rounded-full
-              border border-black/20
-              bg-black/5
-              focus:outline-none
-            "
+    md:col-span-2
+    px-5 py-3 rounded-full
+    border border-black/20
+    bg-black/5
+    focus:outline-none
+  "
           >
             <option value="">Select Collaboration Type</option>
-            <option>Speaking Engagement</option>
-            <option>Corporate Wellness</option>
-            <option>Retreat Partnership</option>
-            <option>Educational Programme</option>
-            <option>Creative Project</option>
-            <option>Community Initiative</option>
-            <option>Mentoring</option>
-            <option>Other</option>
+            <option value="Speaking Engagement">Speaking Engagement</option>
+            <option value="Corporate Wellness">Corporate Wellness</option>
+            <option value="Retreat Partnership">Retreat Partnership</option>
+            <option value="Educational Programme">Educational Programme</option>
+            <option value="Creative Project">Creative Project</option>
+            <option value="Community Initiative">Community Initiative</option>
+            <option value="Mentoring">Mentoring</option>
+            <option value="Other">Other</option>
           </select>
 
           <textarea
             rows="5"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
             placeholder="Message"
             className="
               md:col-span-2
@@ -169,15 +255,17 @@ export default function Collaboration() {
 
           <button
             type="submit"
+            disabled={loading}
             className="
-              md:col-span-2
-              mt-4 py-4 rounded-full
-              border border-black
-              hover:bg-black hover:text-white
-              transition
-            "
+    md:col-span-2
+    mt-4 py-4 rounded-full
+    border border-black
+    hover:bg-black hover:text-white
+    transition
+    disabled:opacity-50
+  "
           >
-            SUBMIT COLLABORATION REQUEST
+            {loading ? "SUBMITTING..." : "SUBMIT COLLABORATION REQUEST"}
           </button>
         </motion.form>
       </div>

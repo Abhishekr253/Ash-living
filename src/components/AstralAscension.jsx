@@ -1,9 +1,72 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import astralImg from "../assets/astral.jpeg";
 import logoDark from "../assets/al-logo-black.png";
 import { Link } from "react-router-dom";
 
 export default function AstralAscension() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    telephone: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+
+    try {
+      await emailjs.send(
+  "service_rpuefrw",
+  "template_dmpxu4o",
+  {
+    name: formData.name,
+    email: formData.email,
+    telephone: formData.telephone,
+    message: formData.message,
+
+    section_name: "Astral Ascension",
+
+    company_organization: "N/A",
+    collaboration_type: "Astral Ascension Inquiry",
+
+    date: new Date().toLocaleDateString(),
+    time: new Date().toLocaleTimeString(),
+
+    page_url: window.location.href,
+    submission_id: `ASH-${Date.now()}`,
+  },
+  "LxQMBJc2D2fjN75Jp"
+);
+
+      alert("Your Astral Ascension request has been submitted.");
+
+      setFormData({
+        name: "",
+        email: "",
+        telephone: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Email Error:", error);
+      alert("Failed to send. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="relative min-h-screen w-full bg-white md:bg-transparent text-black md:text-white">
       {/* Desktop Background */}
@@ -35,18 +98,17 @@ export default function AstralAscension() {
             transition={{ duration: 0.8 }}
             viewport={{ once: false, amount: 0.3 }}
             className="
-    mt-4
-    mb-10
-    whitespace-nowrap
-    text-lg
-    font-bold
-    tracking-[0.25em]
-    text-center
-
-    sm:text-3xl
-    sm:font-medium
-    sm:tracking-[0.3em]
-  "
+              mt-4
+              mb-10
+              whitespace-nowrap
+              text-lg
+              font-bold
+              tracking-[0.25em]
+              text-center
+              sm:text-3xl
+              sm:font-medium
+              sm:tracking-[0.3em]
+            "
           >
             ASTRAL ASCENSION
           </motion.h1>
@@ -92,6 +154,7 @@ export default function AstralAscension() {
 
           {/* Form */}
           <motion.form
+            onSubmit={handleSubmit}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -100,33 +163,50 @@ export default function AstralAscension() {
           >
             <input
               type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
               placeholder="Name"
+              required
               className="md:col-span-2 px-5 py-3 rounded-full border border-black/30 md:border-white/40 bg-black/5 md:bg-white/10 backdrop-blur-sm focus:outline-none"
             />
 
             <input
               type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
               placeholder="Email"
+              required
               className="md:col-span-2 px-5 py-3 rounded-full border border-black/30 md:border-white/40 bg-black/5 md:bg-white/10 backdrop-blur-sm focus:outline-none"
             />
 
             <input
               type="tel"
+              name="telephone"
+              value={formData.telephone}
+              onChange={handleChange}
               placeholder="Telephone"
+              required
               className="md:col-span-2 px-5 py-3 rounded-full border border-black/30 md:border-white/40 bg-black/5 md:bg-white/10 backdrop-blur-sm focus:outline-none"
             />
 
             <textarea
               rows="5"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
               placeholder="Please share what you're ready to heal, your intentions for ascension, and anything you'd like us to know."
+              required
               className="md:col-span-2 px-5 py-4 rounded-2xl border border-black/30 md:border-white/40 bg-black/5 md:bg-white/10 backdrop-blur-sm focus:outline-none"
             />
 
             <button
               type="submit"
-              className="md:col-span-2 mt-4 py-4 rounded-full border border-black md:border-white hover:bg-black hover:text-white md:hover:bg-white md:hover:text-black transition"
+              disabled={loading}
+              className="md:col-span-2 mt-4 py-4 rounded-full border border-black md:border-white hover:bg-black hover:text-white md:hover:bg-white md:hover:text-black transition disabled:opacity-50"
             >
-              BEGIN ASCENSION
+              {loading ? "SUBMITTING..." : "BEGIN ASCENSION"}
             </button>
           </motion.form>
         </div>

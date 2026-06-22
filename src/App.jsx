@@ -12,6 +12,7 @@ import Support247 from "./pages/Support247";
 import RiseWithUs from "./pages/RiseWithUs";
 import AshLivingShop from "./pages/AshLivingShop";
 import ExploreAI from "./components/ExploreAI";
+import EmergencySupport from "./components/EmergencySupport";
 
 export default function App() {
   // Initialize theme from localStorage or default to false (light mode)
@@ -55,9 +56,9 @@ export default function App() {
         <Route path="/collaborations" element={<Collaboration />} />
         <Route path="/24-7-support" element={<Support247 />} />
         <Route path="/rise-with-us" element={<RiseWithUs />} />
-
         <Route path="/shop" element={<AshLivingShop />} />
-<Route path="/explore-ai" element={<ExploreAI />} />
+        <Route path="/explore-ai" element={<ExploreAI />} />
+        <Route path="/emergency-support" element={<EmergencySupport />} />
       </Routes>
     </Router>
   );

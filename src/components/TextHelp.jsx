@@ -1,8 +1,69 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import logoDark from "../assets/al-logo-black.png";
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function TextHelp() {
+  const [formData, setFormData] = useState({
+    name: "",
+    telephone: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+
+    try {
+      await emailjs.send(
+        "service_rpuefrw",
+        "template_dmpxu4o",
+        {
+          name: formData.name,
+          telephone: formData.telephone,
+          message: formData.message,
+
+          email: "N/A",
+
+          section_name: "Text Help",
+
+          company_organization: "N/A",
+          collaboration_type: "Text Support Request",
+
+          date: new Date().toLocaleDateString(),
+          time: new Date().toLocaleTimeString(),
+
+          page_url: window.location.href,
+          submission_id: `ASH-${Date.now()}`,
+        },
+        "LxQMBJc2D2fjN75Jp",
+      );
+
+      alert("Your message has been sent.");
+
+      setFormData({
+        name: "",
+        telephone: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error(error);
+      alert("Failed to send message.");
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <div className="min-h-screen bg-white text-black">
       <div className="relative z-10">
@@ -65,6 +126,7 @@ export default function TextHelp() {
 
           {/* Form */}
           <motion.form
+            onSubmit={handleSubmit}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -73,27 +135,37 @@ export default function TextHelp() {
           >
             <input
               type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
               placeholder="Name"
               className="px-5 py-4 rounded-full border border-black/20 bg-white focus:outline-none"
             />
 
             <input
               type="tel"
+              name="telephone"
+              value={formData.telephone}
+              onChange={handleChange}
               placeholder="Telephone"
               className="px-5 py-4 rounded-full border border-black/20 bg-white focus:outline-none"
             />
 
             <textarea
               rows="6"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
               placeholder="Message"
               className="px-5 py-4 rounded-3xl border border-black/20 bg-white focus:outline-none resize-none"
             />
 
             <button
               type="submit"
-              className="mt-2 py-4 rounded-full bg-black text-white hover:opacity-90 transition"
+              disabled={loading}
+              className="mt-2 py-4 rounded-full bg-black text-white hover:opacity-90 transition disabled:opacity-50"
             >
-              SEND MESSAGE
+              {loading ? "SENDING..." : "SEND MESSAGE"}
             </button>
           </motion.form>
         </div>

@@ -4,13 +4,37 @@ import logoDark from "../assets/al-logo-black.png";
 
 export default function ExploreAI() {
   const services = [
-    "AI Video Production",
-    "Cinematic Storytelling",
-    "Creative Direction",
-    "AI Visual Design",
-    "Content Generation",
-    "Brand Experiences",
-  ];
+  {
+    title: "AI Video Production",
+    description:
+      "Transforming concepts into high-impact AI video content designed to communicate your message with cinematic clarity and visual power.",
+  },
+  {
+    title: "Cinematic Storytelling",
+    description:
+      "Crafting emotionally intelligent narratives that capture attention, build depth, and move your audience through a refined visual journey.",
+  },
+  {
+    title: "Creative Direction",
+    description:
+      "Guiding the full creative vision so every image, word, tone, and design choice feels aligned, intentional, and brand-led.",
+  },
+  {
+    title: "AI Visual Design",
+    description:
+      "Designing futuristic AI visuals that give your brand a distinctive, elevated, and forward-thinking digital identity.",
+  },
+  {
+    title: "Content Generation",
+    description:
+      "Producing clear, intelligent, and purposeful content that strengthens your message and keeps your brand consistently visible.",
+  },
+  {
+    title: "Brand Experiences",
+    description:
+      "Building immersive moments that help people feel your brand, understand its purpose, and connect with it on a deeper level.",
+  },
+];
 
   return (
     <div className="min-h-screen bg-white text-black">
@@ -112,63 +136,26 @@ export default function ExploreAI() {
             className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto mb-20"
           >
             {services.map((service, index) => (
-              <div
-                key={index}
-                className="
-        p-5 md:p-8
-        rounded-xl md:rounded-2xl
-        border border-black/10
-        hover:border-black/30
-        transition
-      "
-              >
-                <h3 className="text-base md:text-xl font-medium mb-2 md:mb-3">
-                  {service}
-                </h3>
-
-                <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
-                  Premium AI-powered solutions tailored for modern businesses,
-                  personal brands, creative projects, and transformative digital
-                  experiences.
-                </p>
-              </div>
-            ))}
-          </motion.div>
-
-          {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: false, amount: 0.2 }}
-            className="mb-20"
-          >
-            <h2 className="text-xl sm:text-2xl md:text-5xl font-serif mb-4 md:mb-6">
-              Ready To Explore What's Possible?
-            </h2>
-
-            <p className="max-w-3xl mx-auto text-sm sm:text-base md:text-lg font-light text-gray-600 mb-8 md:mb-10">
-              Discover how advanced AI can transform content creation,
-              storytelling, branding, and digital experiences.
-            </p>
-
-            <button
-              className="
-      px-6 py-2.5
-      sm:px-8 sm:py-3
-      md:px-10 md:py-4
-      rounded-full
-      bg-black
-      text-white
-      text-xs sm:text-sm md:text-base
-      tracking-[0.12em]
-      uppercase
-      hover:opacity-90
+  <div
+    key={index}
+    className="
+      p-5 md:p-8
+      rounded-xl md:rounded-2xl
+      border border-black/10
+      hover:border-black/30
       transition
+      text-left
     "
-            >
-              BOOK A DISCOVERY CALL
-            </button>
+  >
+    <h3 className="text-base md:text-xl font-medium mb-3">
+      {service.title}
+    </h3>
+
+    <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
+      {service.description}
+    </p>
+  </div>
+))}
           </motion.div>
 
           {/* Contact Form */}

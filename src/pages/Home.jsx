@@ -10,6 +10,7 @@ import circlelight from "../assets/circlelight.mp4";
 import circle from "../assets/circleblue.mp4";
 import { FaArrowRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import emailjs from "@emailjs/browser";
 
 export default function Home({ isDark, toggleTheme }) {
   const emergencyRef = useRef(null);
@@ -22,6 +23,65 @@ export default function Home({ isDark, toggleTheme }) {
 
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+
+    try {
+      await emailjs.send(
+        "service_rpuefrw",
+        "template_dmpxu4o",
+        {
+          name: formData.name,
+          email: formData.email,
+
+          telephone: "N/A",
+          message:
+            "Requested to receive exclusive transmissions, updates and early access.",
+
+          section_name: "Stay Connected",
+
+          company_organization: "N/A",
+          collaboration_type: "Newsletter Subscription",
+
+          date: new Date().toLocaleDateString(),
+          time: new Date().toLocaleTimeString(),
+
+          page_url: window.location.href,
+          submission_id: `ASH-${Date.now()}`,
+        },
+        "LxQMBJc2D2fjN75Jp",
+      );
+
+      alert("Thank you for subscribing.");
+
+      setFormData({
+        name: "",
+        email: "",
+      });
+    } catch (error) {
+      console.error(error);
+      alert("Failed to subscribe.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const scrollToSection = (ref) => {
     ref.current?.scrollIntoView({
@@ -225,7 +285,7 @@ export default function Home({ isDark, toggleTheme }) {
           >
             <button
               className="px-12 py-4 rounded-full bg-black text-white dark:bg-white dark:text-black font-medium hover:scale-105 transition"
-              onClick={() => alert("Connecting to emergency services...")}
+              onClick={() => navigate("/emergency-support")}
             >
               CONNECT
             </button>
@@ -661,10 +721,14 @@ export default function Home({ isDark, toggleTheme }) {
               hidden: { opacity: 0, y: 15 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
             }}
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={handleSubmit}
           >
             <input
               type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
               placeholder="Name"
               className="
       w-full
@@ -680,6 +744,10 @@ export default function Home({ isDark, toggleTheme }) {
 
             <input
               type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
               placeholder="Email"
               className="
       w-full
@@ -695,18 +763,20 @@ export default function Home({ isDark, toggleTheme }) {
 
             <button
               type="submit"
+              disabled={loading}
               className="
-      w-full
-      py-4
-      rounded-full
-      bg-black text-white
-      dark:bg-white dark:text-black
-      text-sm tracking-widest uppercase
-      hover:scale-[1.02]
-      transition
-    "
+    w-full
+    py-4
+    rounded-full
+    bg-black text-white
+    dark:bg-white dark:text-black
+    text-sm tracking-widest uppercase
+    hover:scale-[1.02]
+    transition
+    disabled:opacity-50
+  "
             >
-              Send Message
+              {loading ? "SUBSCRIBING..." : "STAY CONNECTED"}
             </button>
           </motion.form>
 

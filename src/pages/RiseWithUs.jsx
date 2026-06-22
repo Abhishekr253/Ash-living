@@ -1,8 +1,70 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import logoDark from "../assets/al-logo-black.png";
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function RiseWithUs() {
+  const [formData, setFormData] = useState({
+    name: "",
+    telephone: "",
+    email: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+
+    try {
+      await emailjs.send(
+        "service_rpuefrw",
+        "template_dmpxu4o",
+        {
+          name: formData.name,
+          email: formData.email,
+          telephone: formData.telephone,
+          message: formData.message,
+
+          section_name: "Rise With Us",
+
+          company_organization: "N/A",
+          collaboration_type: "Growth & Mentorship Inquiry",
+
+          date: new Date().toLocaleDateString(),
+          time: new Date().toLocaleTimeString(),
+
+          page_url: window.location.href,
+          submission_id: `ASH-${Date.now()}`,
+        },
+        "LxQMBJc2D2fjN75Jp",
+      );
+
+      alert("Thank you for reaching out. We'll be in touch soon.");
+
+      setFormData({
+        name: "",
+        telephone: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Email Error:", error);
+      alert("Failed to send. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <div className="relative min-h-screen w-full bg-white  text-black">
       {/* Desktop Background */}
@@ -85,6 +147,7 @@ export default function RiseWithUs() {
           {/* Form */}
           <div className="max-w-3xl mx-auto rounded-3xl border border-black/10 p-6 sm:p-10">
             <motion.form
+              onSubmit={handleSubmit}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -93,30 +156,43 @@ export default function RiseWithUs() {
             >
               <input
                 type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
                 placeholder="Name"
                 className="px-5 py-4 rounded-full border border-black/20 bg-white focus:outline-none"
               />
 
               <input
                 type="tel"
+                name="telephone"
+                value={formData.telephone}
+                onChange={handleChange}
                 placeholder="Telephone"
                 className="px-5 py-4 rounded-full border border-black/20 bg-white focus:outline-none"
               />
 
               <input
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="Email"
                 className="px-5 py-4 rounded-full border border-black/20 bg-white focus:outline-none"
               />
 
               <textarea
                 rows="6"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="Tell us about your goals and what you would like support with."
                 className="px-5 py-4 rounded-3xl border border-black/20 bg-white focus:outline-none resize-none"
               />
 
               <button
                 type="submit"
+                disabled={loading}
                 className="
     mt-2
     px-6 md:px-8
@@ -131,9 +207,10 @@ export default function RiseWithUs() {
     uppercase
     hover:opacity-90
     transition
+    disabled:opacity-50
   "
               >
-                CONNECT WITH US
+                {loading ? "SENDING..." : "CONNECT WITH US"}
               </button>
             </motion.form>
           </div>
