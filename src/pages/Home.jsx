@@ -11,6 +11,7 @@ import circle from "../assets/circleblue.mp4";
 import { FaArrowRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import emailjs from "@emailjs/browser";
+import AshLiving from "../components/AshLiving";
 
 export default function Home({ isDark, toggleTheme }) {
   const emergencyRef = useRef(null);
@@ -450,7 +451,8 @@ export default function Home({ isDark, toggleTheme }) {
 
       <div ref={elevateRef} className="m-2 pt-[110px]">
         {/* Scroll Animated Images Component */}
-        <ScrollAnimatedImages isDark={isDark} />
+        {/* <ScrollAnimatedImages isDark={isDark} /> */}
+        <AshLiving />
       </div>
 
       {/* Regenerative Products */}
