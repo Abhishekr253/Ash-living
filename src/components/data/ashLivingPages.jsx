@@ -1,4 +1,4 @@
-import sovereign from "../../assets/space.png";
+import sovereign from "../../assets/sovspace.png";
 // import astral from "../assets/astral.jpg";
 // import immersion from "../assets/immersion.jpg";
 // import shop from "../assets/shop.jpg";

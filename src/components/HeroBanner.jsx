@@ -28,10 +28,10 @@ lg:h-[92vh]
     lg:rounded-[36px]
 
     ${
-  dark
-    ? "shadow-[0_0_80px_rgba(255,255,255,0.18)]"
-    : "shadow-[0_0_80px_rgba(0,0,0,0.28)]"
-}
+      dark
+        ? "shadow-[0_0_80px_rgba(255,255,255,0.18)]"
+        : "shadow-[0_0_80px_rgba(0,0,0,0.28)]"
+    }
   `}
         initial={{ scale: 1.05 }}
         whileInView={{ scale: 1 }}
@@ -44,12 +44,12 @@ lg:h-[92vh]
         }}
       >
         <div
-  className={`absolute inset-0 ${
-    dark
-      ? "bg-black/40 backdrop-blur-[1px]"
-      : "bg-white/45 backdrop-blur-[1px]"
-  }`}
-/>
+          className={`absolute inset-0 ${
+            dark
+              ? "bg-black/40 backdrop-blur-[1px]"
+              : "bg-white/45 backdrop-blur-[1px]"
+          }`}
+        />
 
         <motion.div
           className="
@@ -88,7 +88,7 @@ lg:h-[92vh]
 sm:text-[65px]
 md:text-[85px]
 lg:text-[110px]
-xl:text-[130px]
+xl:text-[90px]
               ${dark ? "text-white" : "text-black"}
             `}
           >

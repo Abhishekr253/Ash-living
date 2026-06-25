@@ -12,6 +12,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import AshLiving from "../components/AshLiving";
+import riseBg from "../assets/risewu.png";
 
 export default function Home({ isDark, toggleTheme }) {
   const emergencyRef = useRef(null);
@@ -385,66 +386,153 @@ export default function Home({ isDark, toggleTheme }) {
       </section>
 
       {/* Rise With Us - FLOWED */}
-      <section ref={riseRef} className="py-12 mt-[-100px] sm:py-20">
+      <section ref={riseRef} className="py-12 sm:py-20 px-3 sm:px-5 lg:px-8">
         <motion.div
-          className="max-w-6xl pt-[110px] mx-auto w-full px-4 sm:px-6"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.25 }}
-          variants={{
-            hidden: {},
-            visible: { transition: { staggerChildren: 0.25 } },
+          className="
+      relative
+      overflow-hidden
+      rounded-[20px]
+      sm:rounded-[28px]
+      lg:rounded-[36px]
+
+      min-h-[650px]
+      lg:min-h-[800px]
+
+      shadow-[0_0_80px_rgba(255,255,255,0.15)]
+    "
+          style={{
+            backgroundImage: `url(${riseBg})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
           }}
+          initial={{ scale: 1.05 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 1.5 }}
         >
-          {/* Main Title & Description */}
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
+
+          {/* Content */}
           <motion.div
-            className="text-center mb-12 sm:mb-16"
+            className="
+        relative
+        z-10
+
+        max-w-6xl
+        mx-auto
+
+        min-h-[650px]
+        lg:min-h-[800px]
+
+        flex
+        flex-col
+        items-center
+        justify-center
+
+        text-center
+
+        px-6
+        sm:px-10
+        lg:px-20
+      "
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.25 }}
             variants={{
-              hidden: { opacity: 0, y: 40 },
+              hidden: {},
               visible: {
-                opacity: 1,
-                y: 0,
-                transition: { duration: 0.8, ease: "easeOut" },
+                transition: {
+                  staggerChildren: 0.25,
+                },
               },
             }}
           >
-            <h2
-              className={`text-3xl sm:text-4xl md:text-6xl  text-black dark:text-white mb-6 sm:mb-8`}
+            <motion.h2
+              className="
+          text-white
+          text-[42px]
+          sm:text-[60px]
+          md:text-[80px]
+          lg:text-[90px]
+          font-light
+          leading-[0.95]
+          mb-8
+        "
+              variants={{
+                hidden: { opacity: 0, y: 40 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.8 },
+                },
+              }}
             >
-              RISE WITH US
-            </h2>
+              RISE
+              <br />
+              WITH US
+            </motion.h2>
 
-            <p className="text-base sm:text-lg md:text-xl font-light text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-6 sm:mb-8 text-justify leading-relaxed">
+            <div className="w-[180px] h-[1px] bg-[#d6c7a0] mb-8" />
+
+            <motion.p
+              className="
+          max-w-3xl
+          text-white/90
+
+          text-[15px]
+          sm:text-lg
+          lg:text-xl
+
+          leading-8
+          mb-10
+        "
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.8 },
+                },
+              }}
+            >
               You will be entering a high-level support space designed to
               deliver strategic clarity and real integration. Sessions are
               personalised, actionable, and focused on building measurable
               change across mindset, structured direction, and grounded
               accountability.
-            </p>
+            </motion.p>
 
-            {/* <p className="text-base sm:text-lg md:text-xl font-light text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-6 sm:mb-8">
-              Sessions are personalised, actionable, and focused on building measurable change across mindset, structured direction, and grounded accountability.
-            </p> */}
-          </motion.div>
-
-          {/* CTA Button */}
-          <motion.div
-            className="text-center mb-12 sm:mb-20"
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                transition: { duration: 0.6, ease: "easeOut" },
-              },
-            }}
-          >
-            <button
+            <motion.button
               onClick={() => navigate("/rise-with-us")}
-              className="px-12 py-4 rounded-full bg-black text-white dark:bg-white dark:text-black font-medium hover:scale-105 transition"
+              className="
+          px-10
+          py-4
+
+          rounded-full
+
+          bg-[#d6c7a0]
+          text-black
+
+          font-medium
+          tracking-[2px]
+
+          hover:bg-white
+          hover:scale-105
+
+          transition-all
+          duration-500
+        "
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.8 },
+                },
+              }}
             >
               CONNECT
-            </button>
+            </motion.button>
           </motion.div>
         </motion.div>
       </section>
