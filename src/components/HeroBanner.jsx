@@ -72,8 +72,8 @@ lg:h-[92vh]
               mb-4
               tracking-[8px]
               uppercase
-              text-sm
-              lg:text-xl
+              text-[9px]
+              lg:text-
               ${dark ? "text-[#d6c7a0]" : "text-[#b08a45]"}
             `}
           >
