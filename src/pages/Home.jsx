@@ -11,8 +11,8 @@ import circle from "../assets/circleblue.mp4";
 import { FaArrowRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import emailjs from "@emailjs/browser";
-import AshLiving from "../components/AshLiving";
-import riseBg from "../assets/risewu.png";
+import AshLiving from "../components/soverigncomponent/AshLiving";
+import riseBg from "../assets/risee.png";
 
 export default function Home({ isDark, toggleTheme }) {
   const emergencyRef = useRef(null);
@@ -22,6 +22,7 @@ export default function Home({ isDark, toggleTheme }) {
   const contactRef = useRef(null);
   const elevateRef = useRef(null);
   const aiRef = useRef(null);
+  const dark = true; // or false
 
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
@@ -96,12 +97,14 @@ export default function Home({ isDark, toggleTheme }) {
   return (
     <div
       className="
-  min-h-screen
-  bg-white dark:bg-black
-  text-black dark:text-white
-  transition-colors
-  text-[14px] sm:text-[16px]
-"
+        min-h-screen
+        w-full
+        overflow-x-hidden
+        bg-white dark:bg-black
+        text-black dark:text-white
+        transition-colors
+        text-[14px] sm:text-[16px]
+      "
     >
       {/* Header */}
       <Header
@@ -121,15 +124,15 @@ export default function Home({ isDark, toggleTheme }) {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="
-    relative
-    w-86 h-40
-    sm:w-72 sm:h-72
-    lg:w-[420px] lg:h-[420px]  lg:ms-10
-    mt-[-4rem]
-    mb-16
-    rounded-full
-    overflow-hidden
-  "
+            relative
+            w-[280px] h-[280px]
+            sm:w-72 sm:h-72
+            lg:w-[420px] lg:h-[420px] lg:ms-10
+            mt-[-4rem]
+            mb-16
+            rounded-full
+            overflow-hidden
+          "
         >
           <video
             src={isDark ? circledark : circle}
@@ -137,7 +140,7 @@ export default function Home({ isDark, toggleTheme }) {
             loop
             muted
             playsInline
-            className="w-[350px] h-full object-cover rounded-full"
+            className="absolute inset-0 w-full h-full object-cover scale-[1.18] rounded-full"
           />
         </motion.div>
 
@@ -147,19 +150,19 @@ export default function Home({ isDark, toggleTheme }) {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.45 }}
           className="
-    mt-4
-    max-w-xl
-    whitespace-nowrap
-    text-sm
-    font-bold
-    tracking-[0.25em]
-    text-black
-    dark:text-white
+            mt-4
+            max-w-[90vw]
+            text-sm
+            font-bold
+            tracking-[0.15em]
+            text-black
+            dark:text-white
 
-    sm:text-2xl
-    sm:font-light
-    sm:tracking-[0.3em]
-  "
+            sm:text-2xl
+            sm:font-light
+            sm:tracking-[0.3em]
+            sm:whitespace-nowrap
+          "
         >
           ELEVATE YOUR WHOLE ENERGY
         </motion.p>
@@ -229,11 +232,11 @@ export default function Home({ isDark, toggleTheme }) {
       {/* Emergency Support */}
       <section
         ref={emergencyRef}
-        className=" pt-[125px] min-h-screen flex item*s-center justify-center px-4 sm:px-6 py-24 sm:py-32 transition-colors bg-white dark:bg-black"
+        className="pt-[125px] min-h-screen flex items-center justify-center px-4 sm:px-6 py-24 sm:py-32 transition-colors bg-white dark:bg-black overflow-x-hidden"
       >
         {/* Animated Content */}
         <motion.div
-          className="relative z-10 max-w-6xl text-center px-4 text-black dark:text-white"
+          className="relative z-10 w-full max-w-6xl text-center px-4 text-black dark:text-white"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
@@ -244,7 +247,8 @@ export default function Home({ isDark, toggleTheme }) {
         >
           {/* Heading */}
           <motion.h2
-            className="text-2xl sm:text-5xl md:text-7xl lg:text-5xl font-serif mb-8 sm:mb-14 whitespace-nowrap"
+            className="text-2xl sm:text-5xl md:text-7xl lg:text-5xl font-serif mb-8 sm:mb-14
+                       break-words sm:whitespace-nowrap"
             variants={{
               hidden: { opacity: 0, y: 40 },
               visible: {
@@ -338,22 +342,21 @@ export default function Home({ isDark, toggleTheme }) {
                   onClick={() => navigate(item.path)}
                   whileHover={{ y: -4 }}
                   className="
-      bg-gray-100 dark:bg-white/10
-      p-6
-      rounded-xl
-      text-left
-      border border-gray-200 dark:border-white/20
-      hover:bg-gray-200 dark:hover:bg-white/20
-      transition-all
-      duration-300
-      cursor-pointer
-      group
-    "
+                    bg-gray-100 dark:bg-white/10
+                    p-6
+                    rounded-xl
+                    text-left
+                    border border-gray-200 dark:border-white/20
+                    hover:bg-gray-200 dark:hover:bg-white/20
+                    transition-all
+                    duration-300
+                    cursor-pointer
+                    group
+                  "
                 >
                   <div className="flex items-center justify-between mb-2">
                     <h4 className="text-lg font-semibold">{item.title}</h4>
                   </div>
-
                   <p className="text-sm text-gray-700 dark:text-gray-300">
                     {item.desc}
                   </p>
@@ -385,171 +388,132 @@ export default function Home({ isDark, toggleTheme }) {
         </motion.div>
       </section>
 
-      {/* Rise With Us - FLOWED */}
-      <section ref={riseRef} className="py-12 sm:py-20 px-3 sm:px-5 lg:px-8">
-        <motion.div
-          className="
-      relative
-      overflow-hidden
-      rounded-[20px]
-      sm:rounded-[28px]
-      lg:rounded-[36px]
-
-      min-h-[650px]
-      lg:min-h-[800px]
-
-      shadow-[0_0_80px_rgba(255,255,255,0.15)]
-    "
-          style={{
-            backgroundImage: `url(${riseBg})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-          initial={{ scale: 1.05 }}
-          whileInView={{ scale: 1 }}
-          transition={{ duration: 1.5 }}
-        >
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
-
-          {/* Content */}
+      {/* Rise With Us */}
+      <section ref={riseRef} className="py-12 sm:py-20 px-4 overflow-x-hidden">
+        <div className="max-w-[1500px] mx-auto">
           <motion.div
             className="
-        relative
-        z-10
-
-        max-w-6xl
-        mx-auto
-
-        min-h-[650px]
-        lg:min-h-[800px]
-
-        flex
-        flex-col
-        items-center
-        justify-center
-
-        text-center
-
-        px-6
-        sm:px-10
-        lg:px-20
-      "
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.25 }}
-            variants={{
-              hidden: {},
-              visible: {
-                transition: {
-                  staggerChildren: 0.25,
-                },
-              },
+            relative
+            overflow-hidden
+            rounded-[20px]
+            sm:rounded-[28px]
+            lg:rounded-[36px]
+            min-h-[500px]
+sm:min-h-[550px]
+lg:min-h-[620px]
+            shadow-[0_0_120px_rgba(214,199,160,0.18)]
+          "
+            style={{
+              backgroundImage: `url(${riseBg})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
             }}
+            initial={{ scale: 1.05 }}
+            whileInView={{ scale: 1 }}
+            transition={{ duration: 1.5 }}
           >
-            <motion.h2
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
+
+            {/* Content */}
+            <motion.div
               className="
-          text-white
-          text-[42px]
-          sm:text-[60px]
-          md:text-[80px]
-          lg:text-[90px]
-          font-light
-          leading-[0.95]
-          mb-8
-        "
+              relative z-10
+              max-w-6xl mx-auto
+              min-h-[500px]
+sm:min-h-[550px]
+lg:min-h-[620px]
+              flex flex-col items-center justify-center
+              text-center
+              px-6 sm:px-10 lg:px-20
+            "
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.25 }}
               variants={{
-                hidden: { opacity: 0, y: 40 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: { duration: 0.8 },
-                },
+                hidden: {},
+                visible: { transition: { staggerChildren: 0.25 } },
               }}
             >
-              RISE
-              <br />
-              WITH US
-            </motion.h2>
+              <motion.h2
+                className="
+                text-white
+                text-[34px]
+sm:text-[46px]
+md:text-[58px]
+lg:text-[50px]
+tracking-[-0.02em]
+                font-light leading-[0.95] mb-8
+              "
+                variants={{
+                  hidden: { opacity: 0, y: 40 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+                }}
+              >
+                RISE
+                <br />
+                WITH US
+              </motion.h2>
 
-            <div className="w-[180px] h-[1px] bg-[#d6c7a0] mb-8" />
+              <div className="w-[100px] h-[1px] bg-[#d6c7a0] mb-8" />
 
-            <motion.p
-              className="
-          max-w-3xl
-          text-white/90
+              <motion.p
+                className="
+                text-white/90
+                text-[13px]
+sm:text-[14px]
+lg:text-[15px]
 
-          text-[15px]
-          sm:text-lg
-          lg:text-xl
+leading-7
 
-          leading-8
-          mb-10
-        "
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: { duration: 0.8 },
-                },
-              }}
-            >
-              You will be entering a high-level support space designed to
-              deliver strategic clarity and real integration. Sessions are
-              personalised, actionable, and focused on building measurable
-              change across mindset, structured direction, and grounded
-              accountability.
-            </motion.p>
+max-w-2xl mb-10
+              "
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+                }}
+              >
+                You will be entering a high-level support space designed to
+                deliver strategic clarity and real integration. Sessions are
+                personalised, actionable, and focused on building measurable
+                change across mindset, structured direction, and grounded
+                accountability.
+              </motion.p>
 
-            <motion.button
-              onClick={() => navigate("/rise-with-us")}
-              className="
-          px-10
-          py-4
-
-          rounded-full
-
-          bg-[#d6c7a0]
-          text-black
-
-          font-medium
-          tracking-[2px]
-
-          hover:bg-white
-          hover:scale-105
-
-          transition-all
-          duration-500
-        "
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: { duration: 0.8 },
-                },
-              }}
-            >
-              CONNECT
-            </motion.button>
+              <motion.button
+                onClick={() => navigate("/rise-with-us")}
+                className="
+                px-8 py-3 text-[11px]
+tracking-[0.15em]
+uppercase rounded-full
+                bg-[#d6c7a0] text-black
+                font-medium
+                hover:bg-white hover:scale-105
+                transition-all duration-500
+              "
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+                }}
+              >
+                CONNECT
+              </motion.button>
+            </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
       </section>
 
       <div ref={elevateRef} className="m-2 pt-[110px]">
-        {/* Scroll Animated Images Component */}
-        {/* <ScrollAnimatedImages isDark={isDark} /> */}
         <AshLiving />
       </div>
 
       {/* Regenerative Products */}
       <section
         ref={productsRef}
-        className="py-20 pt-[125px] sm:py-35 bg-white dark:bg-black transition-colors"
+        className="py-20 pt-[125px] sm:py-35 bg-white dark:bg-black transition-colors overflow-x-hidden"
       >
         <motion.div
-          className="max-w-7xl mx-auto px-6"
+          className="max-w-7xl mx-auto px-4 sm:px-6"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.25 }}
@@ -572,15 +536,12 @@ export default function Home({ isDark, toggleTheme }) {
           >
             <h2
               className="
-    text-lg
-    sm:text-5xl
-    md:text-5xl
-    font-serif
-    text-black
-    dark:text-white
-    mb-6
-    whitespace-nowrap
-  "
+                text-lg sm:text-5xl md:text-5xl
+                font-serif
+                text-black dark:text-white
+                mb-6
+                break-words sm:whitespace-nowrap
+              "
             >
               REGENERATIVE ESSENTIALS
             </h2>
@@ -588,14 +549,14 @@ export default function Home({ isDark, toggleTheme }) {
             <p className="max-w-3xl mx-auto text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed">
               Regeneration begins at the cellular level. Our advanced
               formulations unite precision minerals with premium nutrients to
-              restore internal balance, elevate vitality, and support the body’s
+              restore internal balance, elevate vitality, and support the body's
               innate restorative intelligence.
             </p>
           </motion.div>
 
           {/* Products Grid */}
           <motion.div
-            className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+            className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
             variants={{
               hidden: {},
               visible: { transition: { staggerChildren: 0.15 } },
@@ -608,11 +569,11 @@ export default function Home({ isDark, toggleTheme }) {
               },
               {
                 title: "MAGNESIUM",
-                desc: " A foundational mineral that supports relaxation, muscle function, and nervous-system regulation.",
+                desc: "A foundational mineral that supports relaxation, muscle function, and nervous-system regulation.",
               },
               {
                 title: "GOLD",
-                desc: " A classic tonic positioned for clarity, composure, and inner coherence.",
+                desc: "A classic tonic positioned for clarity, composure, and inner coherence.",
               },
               {
                 title: "SILVER",
@@ -626,12 +587,12 @@ export default function Home({ isDark, toggleTheme }) {
               <motion.div
                 key={index}
                 className={`
-    p-8 rounded-2xl border border-gray-200 dark:border-white/15
-    bg-gray-50 dark:bg-white/5 backdrop-blur-sm
-    hover:scale-[1.02] transition
-    ${index === 4 ? "col-span-2 flex justify-center" : ""}
-    lg:col-span-1
-  `}
+                  p-5 sm:p-8 rounded-2xl border border-gray-200 dark:border-white/15
+                  bg-gray-50 dark:bg-white/5 backdrop-blur-sm
+                  hover:scale-[1.02] transition
+                  ${index === 4 ? "col-span-2 flex justify-center" : ""}
+                  lg:col-span-1
+                `}
                 variants={{
                   hidden: { opacity: 0, y: 20 },
                   visible: {
@@ -644,7 +605,7 @@ export default function Home({ isDark, toggleTheme }) {
                 <div
                   className={index === 4 ? "max-w-md w-full text-center" : ""}
                 >
-                  <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-black dark:text-white mb-2 sm:mb-3">
+                  <h3 className="text-sm sm:text-lg lg:text-xl font-semibold text-black dark:text-white mb-2 sm:mb-3">
                     {item.title}
                   </h3>
                   <p className="text-xs sm:text-sm leading-relaxed text-gray-600 dark:text-gray-400">
@@ -673,96 +634,141 @@ export default function Home({ isDark, toggleTheme }) {
         </motion.div>
       </section>
 
+      {/* Visual Intelligence / AI Section */}
       <section
         ref={aiRef}
-        className=" pt-[110px] relative min-h-screen w-full overflow-hidden bg-black"
+        className="pt-[110px] px-3 sm:px-5 lg:px-8 py-8 sm:py-12 overflow-x-hidden"
       >
-        {/* Video */}
-        <video
-          className="absolute inset-0 w-full h-full object-cover scale-[1.25] sm:scale-100 origin-center"
-          src={aiCreativeVideo}
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
-
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/55 backdrop-blur-[1px]" />
-
-        {/* Content */}
-        <div className="relative z-10 min-h-screen flex items-center">
+        <motion.div
+          className={`
+            relative overflow-hidden
+            w-full max-w-5xl mx-auto
+            min-h-[380px] sm:min-h-[420px] lg:min-h-[480px]
+            rounded-[24px] sm:rounded-[32px] lg:rounded-[40px]
+            ${
+              isDark
+                ? "bg-[#080808] shadow-[0_0_120px_rgba(255,255,255,0.18)]"
+                : "bg-white shadow-[0_0_120px_rgba(0,0,0,0.18)]"
+            }
+          `}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        >
+          {/* Floating Glow */}
           <motion.div
-            className="max-w-6xl mx-auto px-4 sm:px-6  gap-12 items-center text-white"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
-            transition={{ duration: 0.9, ease: "easeOut" }}
-          >
-            {/* Left Content */}
-            <div className="space-y-6">
+            className={`
+              absolute top-0 left-0
+              w-[180px] h-[180px]
+              sm:w-[260px] sm:h-[260px]
+              rounded-full
+              ${dark ? "bg-white/5" : "bg-black/5"}
+              blur-[100px]
+            `}
+            animate={{ x: [0, 40, 0], y: [0, 30, 0] }}
+            transition={{ duration: 12, repeat: Infinity }}
+          />
+
+          <div className="relative z-10 min-h-[380px] sm:min-h-[420px] lg:min-h-[480px] flex items-center justify-center">
+            <motion.div
+              className="
+                w-full max-w-3xl mx-auto
+                px-5 sm:px-8 text-center
+                mt-8 mb-8 sm:mt-12 sm:mb-12 lg:mt-0 lg:mb-0
+              "
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9 }}
+            >
               <h2
-                className={`text-3xl sm:text-4xl md:text-6xl  ${sovereignFontStyle}`}
+                className={`
+                  text-[22px] sm:text-[28px] md:text-[40px] lg:text-[48px]
+                  font-light leading-[1]
+                  ${sovereignFontStyle}
+                  ${
+                    isDark
+                      ? "text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.35)]"
+                      : "text-black drop-shadow-[0_0_30px_rgba(0,0,0,0.25)]"
+                  }
+                `}
               >
                 Visual Intelligence
               </h2>
 
-              <p className="text-base sm:text-lg md:text-xl font-light text-gray-200 leading-relaxed max-w-xl">
+              <div
+                className={`
+                  w-[90px] h-[1px] mx-auto my-5
+                  ${isDark ? "bg-white/50" : "bg-black/30"}
+                `}
+              />
+
+              <p
+                className={`
+                  text-[13px] sm:text-[14px] md:text-[15px]
+                  leading-7 max-w-xl mx-auto
+                  ${
+                    isDark
+                      ? "text-white/80 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]"
+                      : "text-black/75 drop-shadow-[0_0_15px_rgba(0,0,0,0.15)]"
+                  }
+                `}
+              >
                 This cinematic sequence is produced by a leading team in
-                advanced AI — delivering dynamic motion, hyperreal detail, and
+                advanced AI, delivering dynamic motion, hyperreal detail and
                 futuristic world building that sets the standard beyond
                 traditional design.
               </p>
 
-              <ul className="space-y-3 text-sm sm:text-base text-gray-300">
-                <li>• Cinematic generated visuals</li>
-                <li>• Human-steered creative direction</li>
-                <li>• Emotion-led cinematic storytelling</li>
-                <li>• Crafted for immersive digital experiences</li>
-              </ul>
-
-              <div className="pt-4">
-                <button
-                  onClick={() => navigate("/explore-ai")}
-                  className="bg-white text-black px-6 py-3 rounded-xl font-medium hover:bg-gray-100 transition"
-                >
-                  Explore AI
-                </button>
+              <div className="mt-6 flex flex-wrap justify-center gap-2">
+                {[
+                  "Cinematic Visuals",
+                  "Creative Direction",
+                  "AI Storytelling",
+                  "Immersive Experiences",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className={`
+                      px-3 sm:px-4 py-2 rounded-full text-xs
+                      ${
+                        isDark
+                          ? "bg-white/5 text-white/75 border border-white/10"
+                          : "bg-black/5 text-black/70 border border-black/10"
+                      }
+                    `}
+                  >
+                    {item}
+                  </div>
+                ))}
               </div>
-            </div>
 
-            {/* Right Highlight Card */}
-            {/* <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-              className="relative bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-2xl mb-6  sm:mb-0 "
-            >
-              <h4 className="text-lg sm:text-xl font-light tracking-wide mb-3">
-                Featured AI Scene
-              </h4>
-
-              <p className="text-sm sm:text-base text-gray-200 leading-relaxed">
-                A professional-grade AI-generated sequence demonstrating motion,
-                physics, and creativity — crafted to feel cinematic, grounded,
-                and intentional.
-              </p>
-
-              <div className="mt-4 text-xs uppercase tracking-widest text-gray-300">
-                AI Video · Creative Mode
-              </div>
-            </motion.div> */}
-          </motion.div>
-        </div>
+              <button
+                onClick={() => navigate("/explore-ai")}
+                className={`
+                  mt-10 px-8 py-3 rounded-full
+                  transition-all duration-500 hover:scale-105
+                  ${
+                    isDark
+                      ? "bg-white text-black hover:bg-[#d6c7a0]"
+                      : "bg-black text-white hover:bg-[#b08a45] hover:text-black"
+                  }
+                `}
+              >
+                Explore AI
+              </button>
+            </motion.div>
+          </div>
+        </motion.div>
       </section>
 
       {/* Stay Connected */}
       <section
         ref={contactRef}
-        className="py-20 sm:py-28 bg-gray-50 dark:bg-black border-t border-gray-200 dark:border-white/10"
+        className="py-20 sm:py-28 bg-gray-50 dark:bg-black border-t border-gray-200 dark:border-white/10 overflow-x-hidden"
       >
         <motion.div
-          className="max-w-6xl mx-auto px-6 text-center"
+          className="max-w-6xl mx-auto px-4 sm:px-6 text-center"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
@@ -774,17 +780,11 @@ export default function Home({ isDark, toggleTheme }) {
           {/* Heading */}
           <motion.h2
             className="
-    text-lg
-    sm:text-xl
-    md:text-4xl
-    font-bold
-    sm:font-medium
-    tracking-[0.25em]
-    uppercase
-    mb-6
-    text-black
-    dark:text-white
-  "
+              text-lg sm:text-xl md:text-4xl
+              font-bold sm:font-medium
+              tracking-[0.25em] uppercase
+              mb-6 text-black dark:text-white
+            "
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
@@ -821,15 +821,13 @@ export default function Home({ isDark, toggleTheme }) {
               required
               placeholder="Name"
               className="
-      w-full
-      px-5 py-4
-      rounded-xl
-      bg-white dark:bg-white/10
-      border border-gray-300 dark:border-white/20
-      text-black dark:text-white
-      placeholder-gray-500 dark:placeholder-gray-400
-      focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white
-    "
+                w-full px-5 py-4 rounded-xl
+                bg-white dark:bg-white/10
+                border border-gray-300 dark:border-white/20
+                text-black dark:text-white
+                placeholder-gray-500 dark:placeholder-gray-400
+                focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white
+              "
             />
 
             <input
@@ -840,31 +838,24 @@ export default function Home({ isDark, toggleTheme }) {
               required
               placeholder="Email"
               className="
-      w-full
-      px-5 py-4
-      rounded-xl
-      bg-white dark:bg-white/10
-      border border-gray-300 dark:border-white/20
-      text-black dark:text-white
-      placeholder-gray-500 dark:placeholder-gray-400
-      focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white
-    "
+                w-full px-5 py-4 rounded-xl
+                bg-white dark:bg-white/10
+                border border-gray-300 dark:border-white/20
+                text-black dark:text-white
+                placeholder-gray-500 dark:placeholder-gray-400
+                focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white
+              "
             />
 
             <button
               type="submit"
               disabled={loading}
               className="
-    w-full
-    py-4
-    rounded-full
-    bg-black text-white
-    dark:bg-white dark:text-black
-    text-sm tracking-widest uppercase
-    hover:scale-[1.02]
-    transition
-    disabled:opacity-50
-  "
+                w-full py-4 rounded-full
+                bg-black text-white dark:bg-white dark:text-black
+                text-sm tracking-widest uppercase
+                hover:scale-[1.02] transition disabled:opacity-50
+              "
             >
               {loading ? "SUBSCRIBING..." : "STAY CONNECTED"}
             </button>
@@ -878,16 +869,11 @@ export default function Home({ isDark, toggleTheme }) {
               visible: { opacity: 1, transition: { duration: 0.6 } },
             }}
           >
-            {/* Instagram */}
             <motion.div
               className="flex justify-center mb-12"
               variants={{
                 hidden: { opacity: 0, y: 10 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: { duration: 0.6 },
-                },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
               }}
             >
               <a
@@ -896,14 +882,13 @@ export default function Home({ isDark, toggleTheme }) {
                 rel="noopener noreferrer"
                 aria-label="Instagram"
                 className="
-      p-3 rounded-full
-      border border-gray-300 dark:border-white/20
-      text-gray-600 dark:text-gray-400
-      hover:text-black dark:hover:text-white
-      hover:border-black dark:hover:border-white
-      hover:scale-105
-      transition
-    "
+                  p-3 rounded-full
+                  border border-gray-300 dark:border-white/20
+                  text-gray-600 dark:text-gray-400
+                  hover:text-black dark:hover:text-white
+                  hover:border-black dark:hover:border-white
+                  hover:scale-105 transition
+                "
               >
                 <Instagram size={22} strokeWidth={1.5} />
               </a>

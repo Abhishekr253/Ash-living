@@ -22,15 +22,8 @@ export const ashLivingPages = [
   },
 
   {
-    // image: shop,
     subtitle: "CURATED ESSENTIALS",
-    title: (
-      <>
-        ASH LIVING
-        <br />
-        SHOP
-      </>
-    ),
+    title: "ASH LIVING SHOP",
     description:
       "Regenerative essentials and intentional products crafted to elevate everyday living.",
     buttonText: "SHOP NOW",
@@ -39,15 +32,8 @@ export const ashLivingPages = [
   },
 
   {
-    // image: astral,
     subtitle: "EXPAND CONSCIOUSNESS",
-    title: (
-      <>
-        ASTRAL
-        <br />
-        ASCENSION
-      </>
-    ),
+    title: <>ASTRAL ASCENSION</>,
     description:
       "Explore advanced teachings, immersive experiences and pathways into expanded awareness.",
     buttonText: "START ELEVATION",
@@ -56,15 +42,9 @@ export const ashLivingPages = [
   },
 
   {
-    // image: immersion,
     subtitle: "EXCLUSIVE EXPERIENCES",
-    title: (
-      <>
-        PRIVATE
-        <br />
-        IMMERSIONS
-      </>
-    ),
+    title: "PRIVATE IMMERSIONS",
+
     description:
       "Highly personalised journeys designed for deep transformation and restoration.",
     buttonText: "BOOK NOW",
@@ -73,15 +53,8 @@ export const ashLivingPages = [
   },
 
   {
-    // image: inside,
     subtitle: "BEHIND THE VISION",
-    title: (
-      <>
-        INSIDE
-        <br />
-        ASH LIVING
-      </>
-    ),
+    title: "INSIDE ASH LIVING",
     description:
       "Discover the philosophy, stories and people behind Ash Living.",
     buttonText: "ACCESS",
@@ -92,13 +65,7 @@ export const ashLivingPages = [
   {
     // image: collaboration,
     subtitle: "PARTNERSHIPS",
-    title: (
-      <>
-        COLLABORATE
-        <br />
-        WITH US
-      </>
-    ),
+    title: "COLLABORATE WITH US",
     description:
       "Create meaningful impact through aligned partnerships and shared visions.",
     buttonText: "EXPLORE",

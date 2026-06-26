@@ -5,7 +5,7 @@ import logoDark from "../assets/al-logo-black.png";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
-export default function InsideAshLiving() {
+export default function InsideAshLiving({ isDark = false }) {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -74,14 +74,20 @@ export default function InsideAshLiving() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-white text-black">
+    <div
+      className={`min-h-screen w-full transition-colors duration-500 ${
+        isDark ? "bg-[#080808] text-white" : "bg-white text-black"
+      }`}
+    >
       {/* Logo */}
       <div className="pt-10 flex justify-center">
         <Link to="/">
           <img
             src={logoDark}
             alt="Ash Living"
-            className="h-12 md:h-14 hover:opacity-80 transition"
+            className={`h-12 md:h-14 hover:opacity-80 transition ${
+              isDark ? "invert" : ""
+            }`}
           />
         </Link>
       </div>
@@ -94,18 +100,23 @@ export default function InsideAshLiving() {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: false, amount: 0.3 }}
-          className="
-    mb-8
-    whitespace-nowrap
-    text-sm
-    font-bold
-    tracking-[0.25em]
-    text-black
+          className={`
+  mb-8
+  whitespace-nowrap
+  text-sm
+  font-bold
+  tracking-[0.25em]
 
-    sm:text-2xl
-    sm:font-medium
-    sm:tracking-[0.3em]
-  "
+  sm:text-2xl
+  sm:font-medium
+  sm:tracking-[0.3em]
+
+  ${
+    isDark
+      ? "text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.25)]"
+      : "text-black drop-shadow-[0_0_30px_rgba(0,0,0,0.15)]"
+  }
+`}
         >
           INSIDE ASH LIVING
         </motion.h1>
@@ -116,7 +127,7 @@ export default function InsideAshLiving() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: false, amount: 0.2 }}
-          className="
+          className={`
     space-y-5
     text-sm
     md:text-lg
@@ -125,8 +136,8 @@ export default function InsideAshLiving() {
     max-w-4xl
     mx-auto
     mb-14
-    text-gray-700
-  "
+    ${isDark ? "text-white/75" : "text-gray-700"}
+  `}
         >
           <p>
             Ash Living is an initiation into the infinite architecture of human
@@ -162,12 +173,18 @@ export default function InsideAshLiving() {
             value={formData.name}
             onChange={handleChange}
             placeholder="Name"
-            className="
-              px-5 py-3 rounded-full
-              border border-black/20
-              bg-black/5
-              focus:outline-none
-            "
+            className={`
+px-5 py-3 rounded-full
+backdrop-blur-sm
+focus:outline-none
+transition-all
+
+${
+  isDark
+    ? "bg-white/5 border border-white/20 text-white placeholder:text-white/40"
+    : "bg-black/5 border border-black/20 text-black placeholder:text-black/40"
+}
+`}
           />
 
           <input
@@ -176,12 +193,18 @@ export default function InsideAshLiving() {
             value={formData.telephone}
             onChange={handleChange}
             placeholder="Telephone"
-            className="
-              px-5 py-3 rounded-full
-              border border-black/20
-              bg-black/5
-              focus:outline-none
-            "
+            className={`
+  px-5 py-3 rounded-full
+  backdrop-blur-sm
+  focus:outline-none
+  transition-all
+
+  ${
+    isDark
+      ? "bg-white/5 border border-white/20 text-white placeholder:text-white/40"
+      : "bg-black/5 border border-black/20 text-black placeholder:text-black/40"
+  }
+`}
           />
 
           <input
@@ -190,17 +213,27 @@ export default function InsideAshLiving() {
             value={formData.email}
             onChange={handleChange}
             placeholder="Email"
-            className="
-              md:col-span-2
-              px-5 py-3 rounded-full
-              border border-black/20
-              bg-black/5
-              focus:outline-none
-            "
+            className={`
+  md:col-span-2
+  px-5 py-3 rounded-full
+  backdrop-blur-sm
+  focus:outline-none
+  transition-all
+
+  ${
+    isDark
+      ? "bg-white/5 border border-white/20 text-white placeholder:text-white/40"
+      : "bg-black/5 border border-black/20 text-black placeholder:text-black/40"
+  }
+`}
           />
 
           <div className="md:col-span-2">
-            <label className="block text-sm text-gray-600 mb-2 text-left">
+            <label
+              className={`block text-sm mb-2 text-left ${
+                isDark ? "text-white/60" : "text-gray-600"
+              }`}
+            >
               Date and Time
             </label>
             <input
@@ -208,13 +241,19 @@ export default function InsideAshLiving() {
               name="dateTime"
               value={formData.dateTime}
               onChange={handleChange}
-              className="
-      w-full
-      px-5 py-3 rounded-full
-      border border-black/20
-      bg-black/5
-      focus:outline-none
-    "
+              className={`
+  w-full
+  px-5 py-3 rounded-full
+  backdrop-blur-sm
+  focus:outline-none
+  transition-all
+
+  ${
+    isDark
+      ? "bg-white/5 border border-white/20 text-white"
+      : "bg-black/5 border border-black/20 text-black"
+  }
+`}
             />
           </div>
 
@@ -224,26 +263,41 @@ export default function InsideAshLiving() {
             value={formData.message}
             onChange={handleChange}
             placeholder="Message"
-            className="
-              md:col-span-2
-              px-5 py-4 rounded-2xl
-              border border-black/20
-              bg-black/5
-              resize-none
-              focus:outline-none
-            "
+            className={`
+md:col-span-2
+px-5
+py-4
+rounded-2xl
+resize-none
+backdrop-blur-sm
+focus:outline-none
+transition-all
+
+${
+  isDark
+    ? "bg-white/5 border border-white/20 text-white placeholder:text-white/40"
+    : "bg-black/5 border border-black/20 text-black placeholder:text-black/40"
+}
+`}
           />
 
           <button
             type="submit"
             disabled={loading}
-            className="
-    md:col-span-2
-    mt-4 py-4 rounded-full
-    border border-black
-    hover:bg-black hover:text-white
-    transition
-  "
+            className={`
+md:col-span-2
+mt-4
+py-4
+rounded-full
+transition-all
+duration-300
+
+${
+  isDark
+    ? "bg-white text-black hover:bg-[#d6c7a0]"
+    : "bg-black text-white hover:bg-[#b08a45] hover:text-black"
+}
+`}
           >
             {loading ? "SUBMITTING..." : "BOOK A CALL"}
           </button>

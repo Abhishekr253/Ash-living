@@ -52,11 +52,11 @@ export default function App() {
           element={<ImmediateCareAccess />}
         />
         <Route path="/text-help" element={<TextHelp />} />
-        <Route path="/inside-ash-living" element={<InsideAshLiving />} />
+        <Route path="/inside-ash-living" element={<InsideAshLiving isDark={isDark}/>} />
         <Route path="/collaborations" element={<Collaboration />} />
         <Route path="/24-7-support" element={<Support247 />} />
         <Route path="/rise-with-us" element={<RiseWithUs />} />
-        <Route path="/shop" element={<AshLivingShop />} />
+        <Route path="/shop" element={<AshLivingShop isDark={isDark} />} />
         <Route path="/explore-ai" element={<ExploreAI />} />
         <Route path="/emergency-support" element={<EmergencySupport />} />
       </Routes>
