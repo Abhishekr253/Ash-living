@@ -643,12 +643,12 @@ uppercase rounded-full
           className={`
             relative overflow-hidden
             w-full max-w-5xl mx-auto
-            min-h-[380px] sm:min-h-[420px] lg:min-h-[480px]
+            min-h-[380px] sm:min-h-[420px] lg:min-h-[480px]        
             rounded-[24px] sm:rounded-[32px] lg:rounded-[40px]
             ${
               isDark
-                ? "bg-[#080808] shadow-[0_0_120px_rgba(255,255,255,0.18)]"
-                : "bg-white shadow-[0_0_120px_rgba(0,0,0,0.18)]"
+                ?  "bg-white shadow-[0_0_120px_rgba(0,0,0,0.18)]"
+                :"bg-[#080808] shadow-[0_0_120px_rgba(255,255,255,0.18)]"
             }
           `}
           initial={{ opacity: 0, y: 50 }}
@@ -663,7 +663,7 @@ uppercase rounded-full
               w-[180px] h-[180px]
               sm:w-[260px] sm:h-[260px]
               rounded-full
-              ${dark ? "bg-white/5" : "bg-black/5"}
+              ${isDark ?"bg-black/5" : "bg-white/5" }
               blur-[100px]
             `}
             animate={{ x: [0, 40, 0], y: [0, 30, 0] }}
@@ -688,8 +688,8 @@ uppercase rounded-full
                   ${sovereignFontStyle}
                   ${
                     isDark
-                      ? "text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.35)]"
-                      : "text-black drop-shadow-[0_0_30px_rgba(0,0,0,0.25)]"
+                      ?"text-black drop-shadow-[0_0_30px_rgba(0,0,0,0.25)]" 
+                      : "text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.35)]"
                   }
                 `}
               >
@@ -699,7 +699,7 @@ uppercase rounded-full
               <div
                 className={`
                   w-[90px] h-[1px] mx-auto my-5
-                  ${isDark ? "bg-white/50" : "bg-black/30"}
+                  ${isDark ? "bg-black/30"  : "bg-white/50"}
                 `}
               />
 
@@ -709,8 +709,8 @@ uppercase rounded-full
                   leading-7 max-w-xl mx-auto
                   ${
                     isDark
-                      ? "text-white/80 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]"
-                      : "text-black/75 drop-shadow-[0_0_15px_rgba(0,0,0,0.15)]"
+                      ?  "text-black/75 drop-shadow-[0_0_15px_rgba(0,0,0,0.15)]" 
+                      : "text-white/80 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]"
                   }
                 `}
               >
@@ -733,8 +733,8 @@ uppercase rounded-full
                       px-3 sm:px-4 py-2 rounded-full text-xs
                       ${
                         isDark
-                          ? "bg-white/5 text-white/75 border border-white/10"
-                          : "bg-black/5 text-black/70 border border-black/10"
+                          ?"bg-black/5 text-black/70 border border-black/10" 
+                          : "bg-white/5 text-white/75 border border-white/10"
                       }
                     `}
                   >
@@ -750,8 +750,8 @@ uppercase rounded-full
                   transition-all duration-500 hover:scale-105
                   ${
                     isDark
-                      ? "bg-white text-black hover:bg-[#d6c7a0]"
-                      : "bg-black text-white hover:bg-[#b08a45] hover:text-black"
+                      ?"bg-black text-white hover:bg-[#b08a45] hover:text-black" 
+                      : "bg-white text-black hover:bg-[#d6c7a0]"
                   }
                 `}
               >
