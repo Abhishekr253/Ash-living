@@ -683,7 +683,7 @@ uppercase rounded-full
             >
               <h2
                 className={`
-                  text-[22px] sm:text-[28px] md:text-[40px] lg:text-[40px]
+                  text-[20px] sm:text-[26px] md:text-[38px] lg:text-[38px]
                   font-light leading-[1]
                   ${sovereignFontStyle}
                   ${
