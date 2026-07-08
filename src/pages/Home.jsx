@@ -683,7 +683,7 @@ uppercase rounded-full
             >
               <h2
                 className={`
-                  text-[22px] sm:text-[28px] md:text-[40px] lg:text-[48px]
+                  text-[22px] sm:text-[28px] md:text-[40px] lg:text-[40px]
                   font-light leading-[1]
                   ${sovereignFontStyle}
                   ${
@@ -693,7 +693,7 @@ uppercase rounded-full
                   }
                 `}
               >
-                Visual Intelligence
+                VISUAL INTELLIGENCE
               </h2>
 
               <div
