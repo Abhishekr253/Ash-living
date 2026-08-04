@@ -16,18 +16,10 @@ import EmergencySupport from "./components/EmergencySupport";
 
 export default function App() {
   // Initialize theme from localStorage or default to false (light mode)
-  const [isDark, setIsDark] = useState(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme !== null) {
-      return savedTheme === "dark";
-    }
-    // Check system preference as fallback
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
-  });
+  const [isDark] = useState(false);
 
   // Apply theme to document and save to localStorage
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", isDark);
     localStorage.setItem("theme", isDark ? "dark" : "light");
   }, [isDark]);
 
@@ -39,9 +31,9 @@ export default function App() {
           path="/"
           element={
             <Home
-              isDark={isDark}
-              toggleTheme={() => setIsDark((prev) => !prev)}
-            />
+  isDark={false}
+  toggleTheme={() => {}}
+/>
           }
         />
         <Route path="/astral-ascension" element={<AstralAscension />} />

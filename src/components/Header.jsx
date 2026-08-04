@@ -26,7 +26,7 @@ export default function Header({ isDark, toggleTheme, onMenuClick }) {
         {/* Right Actions */}
         <div className="flex items-center gap-4">
           {/* Theme Toggle */}
-          <button
+          {/* <button
             onClick={toggleTheme}
             className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
             aria-label="Toggle theme"
@@ -36,7 +36,7 @@ export default function Header({ isDark, toggleTheme, onMenuClick }) {
             ) : (
               <Moon className="w-6 h-6 text-gray-800 dark:text-gray-200" />
             )}
-          </button>
+          </button> */}
 
           {/* Hamburger Menu */}
           <button
